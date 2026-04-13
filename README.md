@@ -1,15 +1,39 @@
 # MyRobotProject
 
-具身智能（VLA）联调工程：**感知 → 认知 → 运动适配（CLIP）**，Headless CLI。
+Headless embodied AI (VLA) integration project with a clean **3+1 layered architecture**:
 
-| 文档 | 说明 |
-|------|------|
-| [使用手册.md](./使用手册.md) | 目录结构、环境变量、命令与代码示例 |
-| [外部来源说明.md](./外部来源说明.md) | 本仓库中来自第三方或其它项目的组件标注 |
+- `perception_engine.py` — perception and 3D anchoring
+- `cognitive_brain.py` — speech + VLM decision + failure reflection
+- `motor_adapter.py` — text-to-CLIP embedding bridge (`[1, 512]`)
+- `test_pipeline.py` — minimal end-to-end smoke test
 
-```powershell
-cd MyRobotProject
+## Quick Start
+
+```bash
+git clone https://github.com/Samuel-0920/RobotProject.git
+cd RobotProject
 python test_pipeline.py
 ```
 
-依赖见 `requirements-g1-env.txt` 与 `G1_ENV_SETUP.md`。
+Expected output:
+
+1. `[Perception] JSON -> ...`
+2. `[Brain] Decision -> ...`
+3. `[Motor] Tensor Shape -> ...`
+
+If CLIP/torch is not installed, the motor line may show `unavailable`.
+
+## Project Docs
+
+| Document | Description |
+|----------|-------------|
+| [使用手册.md](./使用手册.md) | Full usage guide (setup, env vars, commands, examples) |
+| [外部来源说明.md](./外部来源说明.md) | Third-party / upstream source attribution |
+| [G1_ENV_SETUP.md](./G1_ENV_SETUP.md) | Environment bootstrap details |
+| [README_VLA_SYS.md](./README_VLA_SYS.md) | Historical architecture notes |
+
+## Important Notes
+
+- Runtime artifacts are under `outputs/` and ignored by git.
+- Heavy model binaries (`*.pt`, `*.pth`, `*.onnx`) are ignored; download them on each machine.
+- `graduate_pro/` and `ADM_DP/` are integrated as source directories (not git submodules).
