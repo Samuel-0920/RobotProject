@@ -1,13 +1,20 @@
 # MyRobotProject
 
-Headless embodied AI (VLA) integration project with a clean **3+1 layered architecture**:
+Headless embodied AI (VLA) integration with a **3+1 layered stack**: perception → cognitive (VLM) → motor/language bridge → diffusion policy execution, plus **failure reflection** and retry.
 
-- `perception_engine.py` — perception and 3D anchoring
-- `cognitive_brain.py` — speech + VLM decision + failure reflection
-- `motor_adapter.py` — text-to-CLIP embedding bridge (`[1, 512]`)
-- `test_pipeline.py` — minimal end-to-end smoke test
+| Layer | Key files | Role |
+|-------|-----------|------|
+| Perception | `perception_engine.py`, `graduate_pro/.../vision_ai` | YOLO + SAM2 + 3D features → `scene_json` |
+| Cognitive | `cognitive_brain.py` | Instruction parsing, target choice, reflection |
+| Motor bridge | `motor_adapter.py` | Text → CLIP-style `language_emb` for FiLM / policy |
+| Execution | `ADM_DP/policy/Diffusion-Policy/*` | Diffusion policy training & rollout |
+| Closed-loop eval | `vla_closed_loop_eval.py` | Full stack + vLLM reflection + optional video/log |
+| DP-only sim eval | `ADM_DP/policy/Diffusion-Policy/eval_real_sim.py` | ManiSkill closed loop without VLM |
+| DP smoke | `ADM_DP/policy/Diffusion-Policy/eval_ckpt_smoke.py` | Forward pass vs Zarr (no env) |
 
-## Quick Start
+**Chinese operational guide:** [使用手册.md](./使用手册.md)
+
+## Quick Start (smoke test)
 
 ```bash
 git clone https://github.com/Samuel-0920/RobotProject.git
@@ -15,25 +22,43 @@ cd RobotProject
 python test_pipeline.py
 ```
 
-Expected output:
+Expected:
 
 1. `[Perception] JSON -> ...`
 2. `[Brain] Decision -> ...`
 3. `[Motor] Tensor Shape -> ...`
 
-If CLIP/torch is not installed, the motor line may show `unavailable`.
+If CLIP/torch is missing, the motor line may show `unavailable`.
 
-## Project Docs
+## Typical workflow (PickCube + DP + VLA)
+
+Details and copy-paste commands: **[使用手册.md §6](./使用手册.md)**. Short outline:
+
+1. **Vision weights** (YOLO/SAM2): `python scripts/download_vision_weights.py`
+2. **Demos**: If teleop H5 has empty RGB (`obs_mode: none`), **replay** with RGB + env states, then **convert**: `python scripts/convert_h5_to_dp_zarr.py ...`
+3. **Train DP** (from `ADM_DP/policy/Diffusion-Policy`): `python train.py --config-name=robot_dp task=pickcube_lang_minimal ...`
+4. **Checkpoints**: Periodic saves go to **`ADM_DP/policy/Diffusion-Policy/checkpoints/<run_name>/`**, not under Hydra’s `data/outputs/...` (training logs/configs live there).
+5. **Eval**: `eval_ckpt_smoke.py` → `eval_real_sim.py` → `vla_closed_loop_eval.py` (start **vLLM** before VLA eval; `--vlm_model` must match the server’s `--served-model-name`).
+
+## `vla_closed_loop_eval.py` scene modes
+
+- **`perception`** (default): YOLO+SAM2 → `scene_json` for reflection.
+- **`sim_gt`**: Skip detectors; use simulator cube/goal poses (debug VLM grounding).
+- **`hybrid`**: Run perception first; if empty/failure, fall back to `sim_gt` on PickCube.
+- **`--perception_visualization`**: Save detection pipeline visualizations when perceiving.
+
+## Project docs
 
 | Document | Description |
 |----------|-------------|
-| [使用手册.md](./使用手册.md) | Full usage guide (setup, env vars, commands, examples) |
-| [外部来源说明.md](./外部来源说明.md) | Third-party / upstream source attribution |
-| [G1_ENV_SETUP.md](./G1_ENV_SETUP.md) | Environment bootstrap details |
-| [README_VLA_SYS.md](./README_VLA_SYS.md) | Historical architecture notes |
+| [使用手册.md](./使用手册.md) | Setup, env vars, commands, Git/GitHub, troubleshooting |
+| [外部来源说明.md](./外部来源说明.md) | Third-party / upstream attribution |
+| [G1_ENV_SETUP.md](./G1_ENV_SETUP.md) | Environment bootstrap |
+| [README_VLA_SYS.md](./README_VLA_SYS.md) | Architecture / design notes |
 
-## Important Notes
+## Important notes
 
-- Runtime artifacts are under `outputs/` and ignored by git.
-- Heavy model binaries (`*.pt`, `*.pth`, `*.onnx`) are ignored; download them on each machine.
-- `graduate_pro/` and `ADM_DP/` are integrated as source directories (not git submodules).
+- Runtime outputs: `outputs/`, `detection_output_*`, local `eval_video/`, repo-root `models/` are **gitignored**; do not commit large weights or recordings.
+- `graduate_pro/` and `ADM_DP/` are vendored source trees (not git submodules).
+- **Git push**: If `origin` uses `git@github.com:...` but you authenticated `gh` with **HTTPS**, run `git remote set-url origin https://github.com/Samuel-0920/RobotProject.git` or configure SSH keys.
+- Without `sudo`, install **GitHub CLI** via conda: `conda install -c conda-forge gh -y`, then `gh auth login` and `gh auth setup-git`.
