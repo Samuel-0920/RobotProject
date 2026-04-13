@@ -29,6 +29,14 @@ OCID-dataset/
 **/models/**/*.pt
 **/models/**/*.pth
 **/models/**/*.onnx
+# Repo-root Hugging Face / local VLM snapshots (multi-GB; never commit)
+/models/
+
+# Perception pipeline run directories (timestamped)
+detection_output_*/
+
+# Local eval recordings
+ADM_DP/policy/Diffusion-Policy/eval_video/
 
 # IDE / OS
 .idea/

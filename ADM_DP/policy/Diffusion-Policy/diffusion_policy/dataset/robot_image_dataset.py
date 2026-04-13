@@ -59,10 +59,14 @@ class RobotImageDataset(BaseImageDataset):
         # 自动检测触觉key
         tactile_keys = sorted([k for k in zarr_root['data'].keys() if k.startswith('tactile')])
         self.tactile_keys = tactile_keys
+        # 自动检测语言嵌入
+        language_keys = sorted([k for k in zarr_root['data'].keys() if k == 'language_emb'])
+        self.language_keys = language_keys
 
+        replay_keys = ['head_camera', 'state', 'action'] + tcp_keys + pointcloud_keys + tactile_keys + language_keys
         self.replay_buffer = ReplayBuffer.copy_from_path(
             zarr_path,
-            keys=['head_camera', 'state', 'action'] + tcp_keys + pointcloud_keys + tactile_keys
+            keys=replay_keys
         )
             
         # 生成验证集掩码
@@ -152,6 +156,9 @@ class RobotImageDataset(BaseImageDataset):
             data[key] = self.replay_buffer[key]
         # 触觉数据加入归一化
         for key in self.tactile_keys:
+            data[key] = self.replay_buffer[key]
+        # 语言嵌入加入归一化
+        for key in self.language_keys:
             data[key] = self.replay_buffer[key]
         # 创建并拟合归一化器
         normalizer = LinearNormalizer()
@@ -258,6 +265,9 @@ class RobotImageDataset(BaseImageDataset):
         # 自动添加触觉数据
         for key in self.tactile_keys:
             obs_dict[key] = samples[key].to(device, non_blocking=True).float()  # B, T, 32
+        # 语言嵌入
+        for key in self.language_keys:
+            obs_dict[key] = samples[key].to(device, non_blocking=True).float()  # B, T, 512
 
         return {
             'obs': obs_dict,

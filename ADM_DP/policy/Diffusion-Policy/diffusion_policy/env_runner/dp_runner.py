@@ -108,6 +108,9 @@ class DPRunner:
             # 触觉数据
             if 'tactile' in obs_dict:
                 obs_dict_input['tactile'] = obs_dict['tactile'].unsqueeze(0)
+            # 语言嵌入
+            if 'language_emb' in obs_dict:
+                obs_dict_input['language_emb'] = obs_dict['language_emb'].unsqueeze(0)
             action_dict = policy.predict_action(obs_dict_input)
 
         # device_transfer
