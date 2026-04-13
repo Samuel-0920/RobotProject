@@ -1,0 +1,111 @@
+{
+  "tracking": {
+    "enabled": true,
+    "max_tracking_steps": 10,
+    "step_movement_ratio": 0.25,
+    "tracking_timeout": 60.0,
+    "failure_retry_count": 2
+  },
+  
+  "similarity": {
+    "feature_weights": {
+      "geometric": 0.4,
+      "appearance": 0.2,
+      "shape": 0.3,
+      "spatial": 0.1
+    },
+    "thresholds": {
+      "overall_match": 0.75,
+      "high_confidence": 0.85,
+      "low_confidence": 0.60,
+      "failure_threshold": 0.40
+    },
+    "adaptive_thresholds": {
+      "enabled": true,
+      "quality_adjustment": true,
+      "history_adjustment": true,
+      "context_adjustment": true
+    }
+  },
+  
+  "feedback": {
+    "collection_enabled": true,
+    "timeout_seconds": 30.0,
+    "auto_save_frequency": 3,
+    "batch_feedback": true,
+    "require_session_feedback": true
+  },
+  
+  "learning": {
+    "online_learning_enabled": true,
+    "learning_rate": 0.1,
+    "micro_update_frequency": 3,
+    "major_update_frequency": 10,
+    "max_history_size": 100,
+    "class_isolation": true
+  },
+  
+  "data_management": {
+    "save_images": true,
+    "save_tracking_data": true,
+    "data_retention_days": 30,
+    "auto_cleanup": true,
+    "compression_enabled": false
+  },
+  
+  "visualization": {
+    "enabled": true,
+    "show_step_results": true,
+    "show_session_summary": true,
+    "save_visualizations": true,
+    "display_timeout": 5.0
+  },
+  
+  "camera": {
+    "subscription_topics": {
+      "rgb_image": "/camera/color/image_raw",
+      "depth_image": "/camera/depth/image_raw",
+      "camera_info": "/camera/color/camera_info"
+    },
+    "image_processing": {
+      "bypass_cv_bridge": true,
+      "supported_encodings": ["bgr8", "rgb8", "passthrough", "16UC1"],
+      "depth_scale": 1000.0
+    }
+  },
+  
+  "robot_interface": {
+    "target_pose_topic": "/xarm/target_pose",
+    "movement_complete_topic": "/xarm/movement_complete",
+    "tracking_status_topic": "/tracking_status",
+    "coordinate_frame": "base_link",
+    "position_units": "meters"
+  },
+  
+  "performance": {
+    "detection_frequency": 2.0,
+    "max_detection_candidates": 10,
+    "feature_extraction_timeout": 5.0,
+    "parallel_processing": false
+  },
+  
+  "debug": {
+    "enabled": false,
+    "verbose_logging": false,
+    "save_debug_images": false,
+    "timing_analysis": false,
+    "memory_monitoring": false
+  },
+  
+  "user_profiles": {
+    "enable_multi_user": true,
+    "data_isolation": true,
+    "auto_create_profiles": true,
+    "default_preferences": {
+      "feedback_timeout": 30.0,
+      "max_tracking_steps": 10,
+      "visualization_enabled": true,
+      "auto_save_enabled": true
+    }
+  }
+}

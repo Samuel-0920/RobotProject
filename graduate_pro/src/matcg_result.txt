@@ -1,0 +1,345 @@
+INFO] [1753368841.391199114] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368841.391447489] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368841.391817305] [simplified_tracking_node]:      📊 特征相似度: 0.360
+[INFO] [1753368841.392082633] [simplified_tracking_node]:      📊 空间奖励: 0.000
+[INFO] [1753368841.392352197] [simplified_tracking_node]:      📊 总分: 0.288 (阈值: 0.3)
+[INFO] [1753368841.392607170] [simplified_tracking_node]:      🎯 新的最佳匹配: lemon_0 (分数: 0.288)
+[INFO] [1753368841.392867335] [simplified_tracking_node]: ❌ 未找到匹配: lemon (最高分数: 0.288 < 阈值: 0.3)
+[INFO] [1753368841.393174508] [simplified_tracking_node]: 🔗 匹配结果: [('potato_0', 0.5396069779021244), ('banana_0', 0.5019736835895034), ('temp_corn_74', 0.0), ('lemon_0', 0.3003097645183547), ('temp_lemon_941', 0.0)]
+[INFO] [1753368841.393460209] [simplified_tracking_node]: 🎯 第6帧找到目标: banana_0 (置信度: 0.502)
+[INFO] [1753368841.393730984] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368841.394002785] [simplified_tracking_node]: 📍 第6帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368841.394263482] [simplified_tracking_node]: 📊 第6帧: ✅ 匹配成功, 置信度=0.502 (阈值=0.2)
+[INFO] [1753368841.394539357] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (6/6)
+[INFO] [1753368843.569240681] [simplified_tracking_node]: 🔍 第7帧检测到对象: [('potato', 8), ('banana', 1), ('corn', 3), ('lemon', 4), ('lemon', 4)]
+[INFO] [1753368843.569574482] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=8, class_name=potato
+[INFO] [1753368843.569874305] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368843.570144729] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368843.570400557] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368843.570658183] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368843.570911404] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368843.571268019] [simplified_tracking_node]:      📊 特征相似度: 0.424
+[INFO] [1753368843.571515288] [simplified_tracking_node]:      📊 空间奖励: 0.998
+[INFO] [1753368843.571761091] [simplified_tracking_node]:      📊 总分: 0.539 (阈值: 0.3)
+[INFO] [1753368843.572006283] [simplified_tracking_node]:      🎯 新的最佳匹配: potato_0 (分数: 0.539)
+[INFO] [1753368843.572248890] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368843.572489694] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 8
+[INFO] [1753368843.572728673] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368843.572993965] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 8
+[INFO] [1753368843.573235483] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368843.573476512] [simplified_tracking_node]:      ❌ 类别不匹配: 4 != 8
+[INFO] [1753368843.573724512] [simplified_tracking_node]: ✅ 特征匹配成功: potato_0 (置信度: 0.539)
+[INFO] [1753368843.573976748] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=1, class_name=banana
+[INFO] [1753368843.574220323] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368843.574463271] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368843.574700356] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 1
+[INFO] [1753368843.574946243] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368843.575184274] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368843.575430032] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368843.575685649] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368843.576075831] [simplified_tracking_node]:      📊 特征相似度: 0.378
+[INFO] [1753368843.576335440] [simplified_tracking_node]:      📊 空间奖励: 0.998
+[INFO] [1753368843.576592298] [simplified_tracking_node]:      📊 总分: 0.502 (阈值: 0.3)
+[INFO] [1753368843.576846229] [simplified_tracking_node]:      🎯 新的最佳匹配: banana_0 (分数: 0.502)
+[INFO] [1753368843.577107104] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368843.577357217] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 1
+[INFO] [1753368843.577602943] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368843.577853039] [simplified_tracking_node]:      ❌ 类别不匹配: 4 != 1
+[INFO] [1753368843.578101540] [simplified_tracking_node]: ✅ 特征匹配成功: banana_0 (置信度: 0.502)
+[INFO] [1753368843.578357147] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=3, class_name=corn
+[INFO] [1753368843.578608078] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368843.578857683] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368843.579109560] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 3
+[INFO] [1753368843.579358915] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368843.579606560] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 3
+[INFO] [1753368843.579854652] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368843.580113987] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368843.580373395] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368843.580634328] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368843.581004255] [simplified_tracking_node]:      📊 特征相似度: 0.351
+[INFO] [1753368843.581256863] [simplified_tracking_node]:      📊 空间奖励: 0.000
+[INFO] [1753368843.581509929] [simplified_tracking_node]:      📊 总分: 0.280 (阈值: 0.3)
+[INFO] [1753368843.581760176] [simplified_tracking_node]:      🎯 新的最佳匹配: corn_0 (分数: 0.280)
+[INFO] [1753368843.582008842] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368843.582254321] [simplified_tracking_node]:      ❌ 类别不匹配: 4 != 3
+[INFO] [1753368843.582503914] [simplified_tracking_node]: ❌ 未找到匹配: corn (最高分数: 0.280 < 阈值: 0.3)
+[INFO] [1753368843.582756969] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=4, class_name=lemon
+[INFO] [1753368843.583008266] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368843.583253780] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368843.583499602] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 4
+[INFO] [1753368843.583751307] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368843.584006149] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 4
+[INFO] [1753368843.584256156] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368843.584507692] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 4
+[INFO] [1753368843.584757693] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368843.585010856] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368843.585264147] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368843.585525988] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368843.585911791] [simplified_tracking_node]:      📊 特征相似度: 0.372
+[INFO] [1753368843.586191842] [simplified_tracking_node]:      📊 空间奖励: 0.999
+[INFO] [1753368843.586448467] [simplified_tracking_node]:      📊 总分: 0.497 (阈值: 0.3)
+[INFO] [1753368843.586703271] [simplified_tracking_node]:      🎯 新的最佳匹配: lemon_0 (分数: 0.497)
+[INFO] [1753368843.586966145] [simplified_tracking_node]: ✅ 特征匹配成功: lemon_0 (置信度: 0.497)
+[INFO] [1753368843.587225847] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=4, class_name=lemon
+[INFO] [1753368843.587480551] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368843.587733928] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368843.587989897] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 4
+[INFO] [1753368843.588241741] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368843.588492737] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 4
+[INFO] [1753368843.588741232] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368843.589006495] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 4
+[INFO] [1753368843.589258352] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368843.589507299] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368843.589763816] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368843.590025600] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368843.590417169] [simplified_tracking_node]:      📊 特征相似度: 0.360
+[INFO] [1753368843.590684080] [simplified_tracking_node]:      📊 空间奖励: 0.000
+[INFO] [1753368843.590949782] [simplified_tracking_node]:      📊 总分: 0.288 (阈值: 0.3)
+[INFO] [1753368843.591208092] [simplified_tracking_node]:      🎯 新的最佳匹配: lemon_0 (分数: 0.288)
+[INFO] [1753368843.591464128] [simplified_tracking_node]: ❌ 未找到匹配: lemon (最高分数: 0.288 < 阈值: 0.3)
+[INFO] [1753368843.591788843] [simplified_tracking_node]: 🔗 匹配结果: [('potato_0', 0.5386037937640215), ('banana_0', 0.502164471792788), ('temp_corn_2275', 0.0), ('lemon_0', 0.49729067597175425), ('temp_lemon_3137', 0.0)]
+[INFO] [1753368843.592084890] [simplified_tracking_node]: 🎯 第7帧找到目标: banana_0 (置信度: 0.502)
+[INFO] [1753368843.592346737] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368843.592604680] [simplified_tracking_node]: 📍 第7帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368843.592865639] [simplified_tracking_node]: 📊 第7帧: ✅ 匹配成功, 置信度=0.502 (阈值=0.2)
+[INFO] [1753368843.593144699] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (7/7)
+[INFO] [1753368845.774985154] [simplified_tracking_node]: 🔍 第8帧检测到对象: [('potato', 8), ('banana', 1), ('corn', 3), ('lemon', 4), ('lemon', 4)]
+[INFO] [1753368845.775319402] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=8, class_name=potato
+[INFO] [1753368845.775579000] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368845.775835614] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368845.776087661] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368845.776349816] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368845.776599362] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368845.777004117] [simplified_tracking_node]:      📊 特征相似度: 0.425
+[INFO] [1753368845.777274467] [simplified_tracking_node]:      📊 空间奖励: 0.999
+[INFO] [1753368845.777535913] [simplified_tracking_node]:      📊 总分: 0.540 (阈值: 0.3)
+[INFO] [1753368845.777789921] [simplified_tracking_node]:      🎯 新的最佳匹配: potato_0 (分数: 0.540)
+[INFO] [1753368845.778038680] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368845.778299704] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 8
+[INFO] [1753368845.778554988] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368845.778813975] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 8
+[INFO] [1753368845.779060360] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368845.779310768] [simplified_tracking_node]:      ❌ 类别不匹配: 4 != 8
+[INFO] [1753368845.779564413] [simplified_tracking_node]: ✅ 特征匹配成功: potato_0 (置信度: 0.540)
+[INFO] [1753368845.779826589] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=1, class_name=banana
+[INFO] [1753368845.780076578] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368845.780322600] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368845.780564904] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 1
+[INFO] [1753368845.780812696] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368845.781062256] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368845.781314101] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368845.781563297] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368845.781938783] [simplified_tracking_node]:      📊 特征相似度: 0.378
+[INFO] [1753368845.782235158] [simplified_tracking_node]:      📊 空间奖励: 0.999
+[INFO] [1753368845.782500931] [simplified_tracking_node]:      📊 总分: 0.503 (阈值: 0.3)
+[INFO] [1753368845.782750896] [simplified_tracking_node]:      🎯 新的最佳匹配: banana_0 (分数: 0.503)
+[INFO] [1753368845.782999461] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368845.783245627] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 1
+[INFO] [1753368845.783491494] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368845.783737450] [simplified_tracking_node]:      ❌ 类别不匹配: 4 != 1
+[INFO] [1753368845.784002747] [simplified_tracking_node]: ✅ 特征匹配成功: banana_0 (置信度: 0.503)
+[INFO] [1753368845.784261845] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=3, class_name=corn
+[INFO] [1753368845.784516372] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368845.784771945] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368845.785028294] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 3
+[INFO] [1753368845.785280226] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368845.785531934] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 3
+[INFO] [1753368845.785787649] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368845.786040039] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368845.786296823] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368845.786549844] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368845.786912509] [simplified_tracking_node]:      📊 特征相似度: 0.350
+[INFO] [1753368845.787173674] [simplified_tracking_node]:      📊 空间奖励: 0.000
+[INFO] [1753368845.787425417] [simplified_tracking_node]:      📊 总分: 0.280 (阈值: 0.3)
+[INFO] [1753368845.787680055] [simplified_tracking_node]:      🎯 新的最佳匹配: corn_0 (分数: 0.280)
+[INFO] [1753368845.787935830] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368845.788199305] [simplified_tracking_node]:      ❌ 类别不匹配: 4 != 3
+[INFO] [1753368845.788453988] [simplified_tracking_node]: ❌ 未找到匹配: corn (最高分数: 0.280 < 阈值: 0.3)
+[INFO] [1753368845.788711078] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=4, class_name=lemon
+[INFO] [1753368845.788968670] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368845.789220722] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368845.789471338] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 4
+[INFO] [1753368845.789720154] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368845.789976286] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 4
+[INFO] [1753368845.790230314] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368845.790480659] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 4
+[INFO] [1753368845.790734279] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368845.790998603] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368845.791253817] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368845.791510295] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368845.791872987] [simplified_tracking_node]:      📊 特征相似度: 0.371
+[INFO] [1753368845.792133356] [simplified_tracking_node]:      📊 空间奖励: 0.999
+[INFO] [1753368845.792395164] [simplified_tracking_node]:      📊 总分: 0.497 (阈值: 0.3)
+[INFO] [1753368845.792661143] [simplified_tracking_node]:      🎯 新的最佳匹配: lemon_0 (分数: 0.497)
+[INFO] [1753368845.792926279] [simplified_tracking_node]: ✅ 特征匹配成功: lemon_0 (置信度: 0.497)
+[INFO] [1753368845.793191536] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=4, class_name=lemon
+[INFO] [1753368845.793448451] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368845.793707957] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368845.793970858] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 4
+[INFO] [1753368845.794225807] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368845.794479158] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 4
+[INFO] [1753368845.794727132] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368845.794987130] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 4
+[INFO] [1753368845.795238688] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368845.795490967] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368845.795745830] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368845.796005195] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368845.796379494] [simplified_tracking_node]:      📊 特征相似度: 0.360
+[INFO] [1753368845.796641521] [simplified_tracking_node]:      📊 空间奖励: 0.000
+[INFO] [1753368845.796902694] [simplified_tracking_node]:      📊 总分: 0.288 (阈值: 0.3)
+[INFO] [1753368845.797164869] [simplified_tracking_node]:      🎯 新的最佳匹配: lemon_0 (分数: 0.288)
+[INFO] [1753368845.797425500] [simplified_tracking_node]: ❌ 未找到匹配: lemon (最高分数: 0.288 < 阈值: 0.3)
+[INFO] [1753368845.797721168] [simplified_tracking_node]: 🔗 匹配结果: [('potato_0', 0.5398899645865882), ('banana_0', 0.502524280931311), ('temp_corn_4473', 0.0), ('lemon_0', 0.4967820879295031), ('temp_lemon_5343', 0.0)]
+[INFO] [1753368845.798017916] [simplified_tracking_node]: 🎯 第8帧找到目标: banana_0 (置信度: 0.503)
+[INFO] [1753368845.798285912] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368845.798552775] [simplified_tracking_node]: 📍 第8帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368845.798815497] [simplified_tracking_node]: 📊 第8帧: ✅ 匹配成功, 置信度=0.503 (阈值=0.2)
+[INFO] [1753368845.799096328] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (8/8)
+[INFO] [1753368845.800641140] [simplified_tracking_node]: 📊 稳定性检测进度: 53% (8/15帧)
+[INFO] [1753368847.975913930] [simplified_tracking_node]: 🔍 第9帧检测到对象: [('potato', 8), ('banana', 1), ('corn', 3), ('lemon', 4), ('lemon', 4)]
+[INFO] [1753368847.976269283] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=8, class_name=potato
+[INFO] [1753368847.976524669] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368847.976781146] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368847.977036331] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368847.977290256] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368847.977539694] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368847.977923068] [simplified_tracking_node]:      📊 特征相似度: 0.424
+[INFO] [1753368847.978183212] [simplified_tracking_node]:      📊 空间奖励: 0.999
+[INFO] [1753368847.978446030] [simplified_tracking_node]:      📊 总分: 0.539 (阈值: 0.3)
+[INFO] [1753368847.978694461] [simplified_tracking_node]:      🎯 新的最佳匹配: potato_0 (分数: 0.539)
+[INFO] [1753368847.978949637] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368847.979244632] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 8
+[INFO] [1753368847.979496896] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368847.979750217] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 8
+[INFO] [1753368847.980066128] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368847.980330522] [simplified_tracking_node]:      ❌ 类别不匹配: 4 != 8
+[INFO] [1753368847.980581202] [simplified_tracking_node]: ✅ 特征匹配成功: potato_0 (置信度: 0.539)
+[INFO] [1753368847.980845965] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=1, class_name=banana
+[INFO] [1753368847.981091635] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368847.981337727] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368847.981582344] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 1
+[INFO] [1753368847.981833469] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368847.982083697] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368847.982333654] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368847.982580873] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368847.982939750] [simplified_tracking_node]:      📊 特征相似度: 0.379
+[INFO] [1753368847.983198837] [simplified_tracking_node]:      📊 空间奖励: 0.998
+[INFO] [1753368847.983449685] [simplified_tracking_node]:      📊 总分: 0.503 (阈值: 0.3)
+[INFO] [1753368847.983696248] [simplified_tracking_node]:      🎯 新的最佳匹配: banana_0 (分数: 0.503)
+[INFO] [1753368847.983947855] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368847.984199069] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 1
+[INFO] [1753368847.984441560] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368847.984686242] [simplified_tracking_node]:      ❌ 类别不匹配: 4 != 1
+[INFO] [1753368847.984937258] [simplified_tracking_node]: ✅ 特征匹配成功: banana_0 (置信度: 0.503)
+[INFO] [1753368847.985191165] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=3, class_name=corn
+[INFO] [1753368847.985437644] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368847.985682107] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368847.985931395] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 3
+[INFO] [1753368847.986175110] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368847.986422437] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 3
+[INFO] [1753368847.986667276] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368847.986920973] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368847.987172731] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368847.987420481] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368847.987766521] [simplified_tracking_node]:      📊 特征相似度: 0.351
+[INFO] [1753368847.988032039] [simplified_tracking_node]:      📊 空间奖励: 0.000
+[INFO] [1753368847.988285553] [simplified_tracking_node]:      📊 总分: 0.281 (阈值: 0.3)
+[INFO] [1753368847.988539456] [simplified_tracking_node]:      🎯 新的最佳匹配: corn_0 (分数: 0.281)
+[INFO] [1753368847.988796565] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368847.989069178] [simplified_tracking_node]:      ❌ 类别不匹配: 4 != 3
+[INFO] [1753368847.989326812] [simplified_tracking_node]: ❌ 未找到匹配: corn (最高分数: 0.281 < 阈值: 0.3)
+[INFO] [1753368847.989609973] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=4, class_name=lemon
+[INFO] [1753368847.989871961] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368847.990134240] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368847.990400567] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 4
+[INFO] [1753368847.990648121] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368847.990896490] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 4
+[INFO] [1753368847.991142089] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368847.991388469] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 4
+[INFO] [1753368847.991632216] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368847.991882297] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368847.992128512] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368847.992375259] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368847.992729318] [simplified_tracking_node]:      📊 特征相似度: 0.371
+[INFO] [1753368847.992995949] [simplified_tracking_node]:      📊 空间奖励: 0.999
+[INFO] [1753368847.993254338] [simplified_tracking_node]:      📊 总分: 0.496 (阈值: 0.3)
+[INFO] [1753368847.993506452] [simplified_tracking_node]:      🎯 新的最佳匹配: lemon_0 (分数: 0.496)
+[INFO] [1753368847.993759970] [simplified_tracking_node]: ✅ 特征匹配成功: lemon_0 (置信度: 0.496)
+[INFO] [1753368847.994023258] [simplified_tracking_node]: 🔗 开始匹配对象: class_id=4, class_name=lemon
+[INFO] [1753368847.994277081] [simplified_tracking_node]: 📚 参考数据库中有 4 个对象
+[INFO] [1753368847.994528024] [simplified_tracking_node]:    🔍 比较参考对象: potato_0 (class_id=8)
+[INFO] [1753368847.994787683] [simplified_tracking_node]:      ❌ 类别不匹配: 8 != 4
+[INFO] [1753368847.995053943] [simplified_tracking_node]:    🔍 比较参考对象: banana_0 (class_id=1)
+[INFO] [1753368847.995309614] [simplified_tracking_node]:      ❌ 类别不匹配: 1 != 4
+[INFO] [1753368847.995565149] [simplified_tracking_node]:    🔍 比较参考对象: corn_0 (class_id=3)
+[INFO] [1753368847.995824759] [simplified_tracking_node]:      ❌ 类别不匹配: 3 != 4
+[INFO] [1753368847.996078027] [simplified_tracking_node]:    🔍 比较参考对象: lemon_0 (class_id=4)
+[INFO] [1753368847.996330442] [simplified_tracking_node]:      ✅ 类别匹配，开始特征比较
+[INFO] [1753368847.996583344] [simplified_tracking_node]:      📊 检测特征键: ['color', 'shape', 'spatial']
+[INFO] [1753368847.996844158] [simplified_tracking_node]:      📊 参考特征键: ['color', 'shape', 'spatial', 'depth_info']
+[INFO] [1753368847.997219813] [simplified_tracking_node]:      📊 特征相似度: 0.359
+[INFO] [1753368847.997499501] [simplified_tracking_node]:      📊 空间奖励: 0.000
+[INFO] [1753368847.997768223] [simplified_tracking_node]:      📊 总分: 0.287 (阈值: 0.3)
+[INFO] [1753368847.998031154] [simplified_tracking_node]:      🎯 新的最佳匹配: lemon_0 (分数: 0.287)
+[INFO] [1753368847.998288556] [simplified_tracking_node]: ❌ 未找到匹配: lemon (最高分数: 0.287 < 阈值: 0.3)
+[INFO] [1753368847.998581951] [simplified_tracking_node]: 🔗 匹配结果: [('potato_0', 0.5394539981137164), ('banana_0', 0.5028074340578303), ('temp_corn_6672', 0.0), ('lemon_0', 0.49638183661917384), ('temp_lemon_7543', 0.0)]
+[INFO] [1753368847.998872441] [simplified_tracking_node]: 🎯 第9帧找到目标: banana_0 (置信度: 0.503)
+[INFO] [1753368847.999142943] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368847.999414632] [simplified_tracking_node]: 📍 第9帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368847.999694114] [simplified_tracking_node]: 📊 第9帧: ✅ 匹配成功, 置信度=0.503 (阈值=0.2)
+[INFO] [1753368847.999975410] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (9/9)
+[INFO] [1753368850.204392957] [simplified_tracking_node]: 🔍 第10帧检测到对象: [('potato', 8), ('banana', 1), ('corn', 3), ('lemon', 4), ('lemon', 4)]
+[INFO] [1753368850.204764519] [simplified_tracking_node]: 🚀 切换到轻量级追踪模式 (类别1唯一)
+[INFO] [1753368850.205088054] [simplified_tracking_node]: 🔗 匹配结果: [('banana_0', 0.95)]
+[INFO] [1753368850.205378541] [simplified_tracking_node]: 🎯 第10帧找到目标: banana_0 (置信度: 0.950)
+[INFO] [1753368850.205659007] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368850.205935649] [simplified_tracking_node]: 📍 第10帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368850.206215097] [simplified_tracking_node]: 📊 第10帧: ✅ 匹配成功, 置信度=0.950 (阈值=0.2)
+[INFO] [1753368850.206507392] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (10/10)
+[INFO] [1753368852.439527609] [simplified_tracking_node]: 🔍 第11帧检测到对象: [('potato', 8), ('banana', 1), ('corn', 3), ('lemon', 4), ('lemon', 4)]
+[INFO] [1753368852.439922090] [simplified_tracking_node]: 🚀 切换到轻量级追踪模式 (类别1唯一)
+[INFO] [1753368852.440244593] [simplified_tracking_node]: 🔗 匹配结果: [('banana_0', 0.95)]
+[INFO] [1753368852.440557894] [simplified_tracking_node]: 🎯 第11帧找到目标: banana_0 (置信度: 0.950)
+[INFO] [1753368852.440849454] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368852.441129291] [simplified_tracking_node]: 📍 第11帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368852.441415353] [simplified_tracking_node]: 📊 第11帧: ✅ 匹配成功, 置信度=0.950 (阈值=0.2)
+[INFO] [1753368852.441715107] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (11/11)
+[INFO] [1753368854.631200474] [simplified_tracking_node]: 🔍 第12帧检测到对象: [('potato', 8), ('banana', 1), ('corn', 3), ('lemon', 4), ('lemon', 4)]
+[INFO] [1753368854.631538275] [simplified_tracking_node]: 🚀 切换到轻量级追踪模式 (类别1唯一)
+[INFO] [1753368854.631849732] [simplified_tracking_node]: 🔗 匹配结果: [('banana_0', 0.95)]
+[INFO] [1753368854.632121321] [simplified_tracking_node]: 🎯 第12帧找到目标: banana_0 (置信度: 0.950)
+[INFO] [1753368854.632373826] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368854.632624290] [simplified_tracking_node]: 📍 第12帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368854.632877405] [simplified_tracking_node]: 📊 第12帧: ✅ 匹配成功, 置信度=0.950 (阈值=0.2)
+[INFO] [1753368854.633143832] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (12/12)
+[INFO] [1753368856.836973602] [simplified_tracking_node]: 🔍 第13帧检测到对象: [('potato', 8), ('banana', 1), ('corn', 3), ('lemon', 4), ('lemon', 4)]
+[INFO] [1753368856.837333143] [simplified_tracking_node]: 🚀 切换到轻量级追踪模式 (类别1唯一)
+[INFO] [1753368856.837628296] [simplified_tracking_node]: 🔗 匹配结果: [('banana_0', 0.95)]
+[INFO] [1753368856.837921247] [simplified_tracking_node]: 🎯 第13帧找到目标: banana_0 (置信度: 0.950)
+[INFO] [1753368856.838182432] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368856.838439680] [simplified_tracking_node]: 📍 第13帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368856.838696103] [simplified_tracking_node]: 📊 第13帧: ✅ 匹配成功, 置信度=0.950 (阈值=0.2)
+[INFO] [1753368856.838970391] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (13/13)
+[INFO] [1753368856.840490333] [simplified_tracking_node]: 📊 稳定性检测进度: 87% (13/15帧)
+[INFO] [1753368859.034787775] [simplified_tracking_node]: 🔍 第14帧检测到对象: [('potato', 8), ('banana', 1), ('corn', 3), ('lemon', 4), ('lemon', 4)]
+[INFO] [1753368859.035121418] [simplified_tracking_node]: 🚀 切换到轻量级追踪模式 (类别1唯一)
+[INFO] [1753368859.035428950] [simplified_tracking_node]: 🔗 匹配结果: [('banana_0', 0.95)]
+[INFO] [1753368859.035703231] [simplified_tracking_node]: 🎯 第14帧找到目标: banana_0 (置信度: 0.950)
+[INFO] [1753368859.035980049] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368859.036435769] [simplified_tracking_node]: 📍 第14帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368859.036887362] [simplified_tracking_node]: 📊 第14帧: ✅ 匹配成功, 置信度=0.950 (阈值=0.2)
+[INFO] [1753368859.037212222] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (14/14)
+[INFO] [1753368861.244411367] [simplified_tracking_node]: 🔍 第15帧检测到对象: [('potato', 8), ('banana', 1), ('corn', 3), ('lemon', 4), ('lemon', 4)]
+[INFO] [1753368861.244760179] [simplified_tracking_node]: 🚀 切换到轻量级追踪模式 (类别1唯一)
+[INFO] [1753368861.245049426] [simplified_tracking_node]: 🔗 匹配结果: [('banana_0', 0.95)]
+[INFO] [1753368861.245318735] [simplified_tracking_node]: 🎯 第15帧找到目标: banana_0 (置信度: 0.950)
+[INFO] [1753368861.245571089] [simplified_tracking_node]:    世界坐标: [30.6, -256.0, 101.7]
+[INFO] [1753368861.245827918] [simplified_tracking_node]: 📍 第15帧位置: [30.6, -256.0, 101.7]
+[INFO] [1753368861.246080415] [simplified_tracking_node]: 📊 第15帧: ✅ 匹配成功, 置信度=0.950 (阈值=0.2)
+[INFO] [1753368861.246348657] [simplified_tracking_node]: 📈 当前稳定性: 100.0% (15/15)
+[INFO] [1753368861.246750322] [simplified_tracking_node]: 📊 稳定性检测完成:
+[INFO] [1753368861.247033020] [simplified_tracking_node]:    匹配稳定性: 100.0% (15/15)
+[INFO] [1753368861.247285809] [simplified_tracking_node]:    位置稳定性: 100.0%
+[INFO] [1753368861.247531768] [simplified_tracking_node]:    综合稳定性: 100.0%
+[INFO] [1753368861.247788183] [simplified_tracking_node]:    判定结果: ✅ 稳定
+[INFO] [1753368861.248058415] [simplified_tracking_node]: ⏹️ 稳定性检测已停止

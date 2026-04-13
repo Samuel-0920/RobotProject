@@ -1,0 +1,66 @@
+# Python相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env
+*.pyc
+
+# IDE和编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# 数据文件夹（根据你的实际文件夹名调整）
+/home/qi/ros2_ws/scan_output_20250715_184017/
+dataset/
+datasets/
+training_data/
+
+# 媒体文件
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+*.gif
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+
+# 日志和临时文件
+logs/
+*.log
+temp/
+tmp/
+*.tmp
+*.temp
+
+# 模型文件（通常很大）
+*.pth
+*.pt
+*.h5
+*.pb
+*.onnx
+models/
+checkpoints/
+
+# 输出文件夹
+output/
+outputs/
+results/scan_output_*/
+scan_output_*
+scan_output_*/
+scan_output_*/
+build/
+install/
+log/
+scan_output_*/

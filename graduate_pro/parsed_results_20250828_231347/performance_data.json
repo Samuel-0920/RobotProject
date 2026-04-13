@@ -1,0 +1,626 @@
+[
+  {
+    "timestamp": "2025-08-28T23:13:47.930838",
+    "test_metadata": {
+      "scenario_id": "controlled_001_normal_single",
+      "complexity_level": 1,
+      "lighting_condition": "normal",
+      "object_count": 1,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_simple",
+      "notes": "Single target object under normal lighting, clean background"
+    },
+    "timing": {
+      "total_time": 1.5162622928619385,
+      "fps": 0.6595164996898422
+    },
+    "detection_stats": {
+      "final_objects": 1,
+      "original_detections": 1,
+      "filtered_detections": 1
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 1,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.9359362721443176,
+      "std_confidence": 0.0,
+      "min_confidence": 0.9359362721443176,
+      "max_confidence": 0.9359362721443176
+    },
+    "feature_extraction_success": {
+      "geometric": 1,
+      "shape": 1,
+      "appearance": 1,
+      "spatial": 1
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 1,
+      "filtered_detections": 1,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:14:43.606305",
+    "test_metadata": {
+      "scenario_id": "controlled_002_normal_multi",
+      "complexity_level": 2,
+      "lighting_condition": "normal",
+      "object_count": 4,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_multi",
+      "notes": "Multiple target objects under normal lighting, well separated"
+    },
+    "timing": {
+      "total_time": 6.0180253982543945,
+      "fps": 0.1661674608900891
+    },
+    "detection_stats": {
+      "final_objects": 4,
+      "original_detections": 4,
+      "filtered_detections": 4
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 4,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.9513134956359863,
+      "std_confidence": 0.0060534619588520685,
+      "min_confidence": 0.941623330116272,
+      "max_confidence": 0.9583132266998291
+    },
+    "feature_extraction_success": {
+      "geometric": 4,
+      "shape": 4,
+      "appearance": 4,
+      "spatial": 4
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 4,
+      "filtered_detections": 4,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:15:10.665427",
+    "test_metadata": {
+      "scenario_id": "controlled_003_dim_single",
+      "complexity_level": 2,
+      "lighting_condition": "dim",
+      "object_count": 1,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_simple",
+      "notes": "Single target object under dim lighting conditions"
+    },
+    "timing": {
+      "total_time": 1.8152120113372803,
+      "fps": 0.5508998363575682
+    },
+    "detection_stats": {
+      "final_objects": 1,
+      "original_detections": 1,
+      "filtered_detections": 1
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 1,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.9012386798858643,
+      "std_confidence": 0.0,
+      "min_confidence": 0.9012386798858643,
+      "max_confidence": 0.9012386798858643
+    },
+    "feature_extraction_success": {
+      "geometric": 1,
+      "shape": 1,
+      "appearance": 1,
+      "spatial": 1
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 1,
+      "filtered_detections": 1,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:15:55.325213",
+    "test_metadata": {
+      "scenario_id": "controlled_004_dim_multi",
+      "complexity_level": 3,
+      "lighting_condition": "dim",
+      "object_count": 4,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_multi",
+      "notes": "Multiple target objects under dim lighting, increased difficulty"
+    },
+    "timing": {
+      "total_time": 5.602505207061768,
+      "fps": 0.17849157886360087
+    },
+    "detection_stats": {
+      "final_objects": 4,
+      "original_detections": 4,
+      "filtered_detections": 4
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 4,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.924204632639885,
+      "std_confidence": 0.052976526776817155,
+      "min_confidence": 0.8326742649078369,
+      "max_confidence": 0.9607434868812561
+    },
+    "feature_extraction_success": {
+      "geometric": 4,
+      "shape": 4,
+      "appearance": 4,
+      "spatial": 4
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 4,
+      "filtered_detections": 4,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:16:26.021809",
+    "test_metadata": {
+      "scenario_id": "controlled_005_backlit_single",
+      "complexity_level": 3,
+      "lighting_condition": "backlit",
+      "object_count": 1,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_challenging",
+      "notes": "Single target with strong backlight creating silhouettes"
+    },
+    "timing": {
+      "total_time": 3.1715190410614014,
+      "fps": 0.315306320741916
+    },
+    "detection_stats": {
+      "final_objects": 1,
+      "original_detections": 1,
+      "filtered_detections": 1
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 1,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.926578998786066,
+      "std_confidence": 0.0,
+      "min_confidence": 0.926578998786066,
+      "max_confidence": 0.926578998786066
+    },
+    "feature_extraction_success": {
+      "geometric": 1,
+      "shape": 1,
+      "appearance": 1,
+      "spatial": 1
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 1,
+      "filtered_detections": 1,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:16:59.277332",
+    "test_metadata": {
+      "scenario_id": "controlled_006_backlit_multi",
+      "complexity_level": 4,
+      "lighting_condition": "backlit",
+      "object_count": 3,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_challenging",
+      "notes": "Multiple targets with challenging backlight conditions"
+    },
+    "timing": {
+      "total_time": 6.818314075469971,
+      "fps": 0.14666382172063147
+    },
+    "detection_stats": {
+      "final_objects": 4,
+      "original_detections": 4,
+      "filtered_detections": 4
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 4,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.9149378565496792,
+      "std_confidence": 0.054472511941704105,
+      "min_confidence": 0.8211024513032394,
+      "max_confidence": 0.9550618529319763
+    },
+    "feature_extraction_success": {
+      "geometric": 4,
+      "shape": 4,
+      "appearance": 4,
+      "spatial": 4
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 4,
+      "filtered_detections": 4,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:17:15.774803",
+    "test_metadata": {
+      "scenario_id": "controlled_007_interference_single",
+      "complexity_level": 3,
+      "lighting_condition": "normal",
+      "object_count": 1,
+      "interference_objects": 1,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_interference",
+      "notes": "Single target with one similar-looking interference object"
+    },
+    "timing": {
+      "total_time": 4.001255750656128,
+      "fps": 0.24992154021547347
+    },
+    "detection_stats": {
+      "final_objects": 2,
+      "original_detections": 2,
+      "filtered_detections": 2
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 2,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.9410230219364166,
+      "std_confidence": 0.001826852560043335,
+      "min_confidence": 0.9391961693763733,
+      "max_confidence": 0.94284987449646
+    },
+    "feature_extraction_success": {
+      "geometric": 2,
+      "shape": 2,
+      "appearance": 2,
+      "spatial": 2
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 2,
+      "filtered_detections": 2,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:17:34.629525",
+    "test_metadata": {
+      "scenario_id": "controlled_008_interference_multi",
+      "complexity_level": 4,
+      "lighting_condition": "normal",
+      "object_count": 4,
+      "interference_objects": 2,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_interference",
+      "notes": "Multiple targets with multiple interference objects of similar appearance"
+    },
+    "timing": {
+      "total_time": 5.157697439193726,
+      "fps": 0.19388496742769862
+    },
+    "detection_stats": {
+      "final_objects": 4,
+      "original_detections": 4,
+      "filtered_detections": 4
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 4,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.950541764497757,
+      "std_confidence": 0.005597419688969133,
+      "min_confidence": 0.9461221098899841,
+      "max_confidence": 0.960149884223938
+    },
+    "feature_extraction_success": {
+      "geometric": 4,
+      "shape": 4,
+      "appearance": 4,
+      "spatial": 4
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 4,
+      "filtered_detections": 4,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:17:56.227920",
+    "test_metadata": {
+      "scenario_id": "controlled_009_occlusion_light",
+      "complexity_level": 3,
+      "lighting_condition": "normal",
+      "object_count": 2,
+      "interference_objects": 0,
+      "occlusion_level": 0.3,
+      "scene_type": "controlled_occlusion",
+      "notes": "Targets with 30% occlusion using transparent/semi-transparent materials"
+    },
+    "timing": {
+      "total_time": 3.378173351287842,
+      "fps": 0.29601796474380915
+    },
+    "detection_stats": {
+      "final_objects": 2,
+      "original_detections": 2,
+      "filtered_detections": 2
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 2,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.944916844367981,
+      "std_confidence": 0.02042865753173828,
+      "min_confidence": 0.9244881868362427,
+      "max_confidence": 0.9653455018997192
+    },
+    "feature_extraction_success": {
+      "geometric": 2,
+      "shape": 2,
+      "appearance": 2,
+      "spatial": 2
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 2,
+      "filtered_detections": 2,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:18:10.352684",
+    "test_metadata": {
+      "scenario_id": "controlled_010_occlusion_moderate",
+      "complexity_level": 4,
+      "lighting_condition": "normal",
+      "object_count": 3,
+      "interference_objects": 0,
+      "occlusion_level": 0.5,
+      "scene_type": "controlled_occlusion",
+      "notes": "Multiple targets with moderate occlusion (50%) using opaque blockers"
+    },
+    "timing": {
+      "total_time": 4.597127914428711,
+      "fps": 0.21752712097946286
+    },
+    "detection_stats": {
+      "final_objects": 3,
+      "original_detections": 3,
+      "filtered_detections": 3
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 3,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.9517339070638021,
+      "std_confidence": 0.004639911216644018,
+      "min_confidence": 0.9461912512779236,
+      "max_confidence": 0.9575470089912415
+    },
+    "feature_extraction_success": {
+      "geometric": 3,
+      "shape": 3,
+      "appearance": 3,
+      "spatial": 3
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 3,
+      "filtered_detections": 3,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:18:29.254830",
+    "test_metadata": {
+      "scenario_id": "controlled_011_dim_interference",
+      "complexity_level": 4,
+      "lighting_condition": "dim",
+      "object_count": 2,
+      "interference_objects": 1,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_combined",
+      "notes": "Dim lighting combined with interference objects"
+    },
+    "timing": {
+      "total_time": 2.511014938354492,
+      "fps": 0.39824534084823715
+    },
+    "detection_stats": {
+      "final_objects": 2,
+      "original_detections": 2,
+      "filtered_detections": 2
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 2,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.8378440737724304,
+      "std_confidence": 0.0004407167434692383,
+      "min_confidence": 0.8374033570289612,
+      "max_confidence": 0.8382847905158997
+    },
+    "feature_extraction_success": {
+      "geometric": 2,
+      "shape": 2,
+      "appearance": 2,
+      "spatial": 2
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 2,
+      "filtered_detections": 2,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "timestamp": "2025-08-28T23:18:33.476432",
+    "test_metadata": {
+      "scenario_id": "controlled_012_backlit_occlusion",
+      "complexity_level": 5,
+      "lighting_condition": "backlit",
+      "object_count": 2,
+      "interference_objects": 0,
+      "occlusion_level": 0.3,
+      "scene_type": "controlled_combined",
+      "notes": "Most challenging: backlight with partial occlusion"
+    },
+    "timing": {
+      "total_time": 3.4942641258239746,
+      "fps": 0.2861832889533479
+    },
+    "detection_stats": {
+      "final_objects": 2,
+      "original_detections": 2,
+      "filtered_detections": 2
+    },
+    "quality_stats": {
+      "mean_quality": 100.0,
+      "std_quality": 0.0,
+      "min_quality": 100.0,
+      "max_quality": 100.0,
+      "quality_distribution": {
+        "excellent": 2,
+        "good": 0,
+        "fair": 0,
+        "poor": 0
+      }
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.9016185402870178,
+      "std_confidence": 0.0374530553817749,
+      "min_confidence": 0.8641654849052429,
+      "max_confidence": 0.9390715956687927
+    },
+    "feature_extraction_success": {
+      "geometric": 2,
+      "shape": 2,
+      "appearance": 2,
+      "spatial": 2
+    },
+    "post_processing": {
+      "enabled": true,
+      "original_detections": 2,
+      "filtered_detections": 2,
+      "duplicates_removed": 0
+    }
+  }
+]

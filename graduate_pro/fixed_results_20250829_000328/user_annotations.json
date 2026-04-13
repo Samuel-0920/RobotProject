@@ -1,0 +1,116 @@
+[
+  {
+    "scenario_id": "scan_output_20250828_211017",
+    "annotation": {
+      "scene_quality": 5,
+      "detection_accuracy": 5,
+      "feature_quality_accuracy": 5,
+      "annotation_timestamp": "2025-08-29T00:03:35.651196"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_211153",
+    "annotation": {
+      "scene_quality": 5,
+      "detection_accuracy": 5,
+      "feature_quality_accuracy": 5,
+      "annotation_timestamp": "2025-08-29T00:04:00.629398"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_212014",
+    "annotation": {
+      "scene_quality": 4,
+      "detection_accuracy": 4,
+      "feature_quality_accuracy": 4,
+      "error_types": [
+        "wrong_classification"
+      ],
+      "annotation_timestamp": "2025-08-29T00:04:24.932246"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_212130",
+    "annotation": {
+      "scene_quality": 5,
+      "detection_accuracy": 5,
+      "feature_quality_accuracy": 4,
+      "annotation_timestamp": "2025-08-29T00:04:43.701994"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_213513",
+    "annotation": {
+      "scene_quality": 4,
+      "detection_accuracy": 4,
+      "feature_quality_accuracy": 3,
+      "annotation_timestamp": "2025-08-29T00:05:01.498067"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_213620",
+    "annotation": {
+      "scene_quality": 4,
+      "detection_accuracy": 5,
+      "feature_quality_accuracy": 4,
+      "annotation_timestamp": "2025-08-29T00:05:14.152052"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_213818",
+    "annotation": {
+      "scene_quality": 5,
+      "detection_accuracy": 5,
+      "feature_quality_accuracy": 5,
+      "annotation_timestamp": "2025-08-29T00:05:24.655063"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_214100",
+    "annotation": {
+      "scene_quality": 4,
+      "detection_accuracy": 3,
+      "feature_quality_accuracy": 5,
+      "annotation_timestamp": "2025-08-29T00:05:37.232820"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_214331",
+    "annotation": {
+      "scene_quality": 4,
+      "detection_accuracy": 5,
+      "feature_quality_accuracy": 4,
+      "error_types": [
+        "poor_segmentation"
+      ],
+      "annotation_timestamp": "2025-08-29T00:06:15.326480"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_214724",
+    "annotation": {
+      "scene_quality": 5,
+      "detection_accuracy": 5,
+      "feature_quality_accuracy": 5,
+      "annotation_timestamp": "2025-08-29T00:06:28.226566"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_215201",
+    "annotation": {
+      "scene_quality": 5,
+      "detection_accuracy": 5,
+      "feature_quality_accuracy": 4,
+      "annotation_timestamp": "2025-08-29T00:06:48.547715"
+    }
+  },
+  {
+    "scenario_id": "scan_output_20250828_215427",
+    "annotation": {
+      "scene_quality": 5,
+      "detection_accuracy": 4,
+      "feature_quality_accuracy": 4,
+      "annotation_timestamp": "2025-08-29T00:06:59.043067"
+    }
+  }
+]

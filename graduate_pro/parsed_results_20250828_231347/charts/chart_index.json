@@ -1,0 +1,36 @@
+{
+  "generation_timestamp": "2025-08-28T23:55:34.107928",
+  "total_charts": 6,
+  "charts": [
+    {
+      "name": "detection_accuracy_by_complexity",
+      "file_path": "/home/qi/ros2_ws/parsed_results_20250828_231347/charts/detection_accuracy_by_complexity.png",
+      "file_name": "detection_accuracy_by_complexity.png"
+    },
+    {
+      "name": "lighting_condition_impact",
+      "file_path": "/home/qi/ros2_ws/parsed_results_20250828_231347/charts/lighting_condition_impact.png",
+      "file_name": "lighting_condition_impact.png"
+    },
+    {
+      "name": "3d_post_processing_effectiveness",
+      "file_path": "/home/qi/ros2_ws/parsed_results_20250828_231347/charts/3d_post_processing_effectiveness.png",
+      "file_name": "3d_post_processing_effectiveness.png"
+    },
+    {
+      "name": "feature_quality_correlation",
+      "file_path": "/home/qi/ros2_ws/parsed_results_20250828_231347/charts/feature_quality_correlation.png",
+      "file_name": "feature_quality_correlation.png"
+    },
+    {
+      "name": "processing_time_breakdown",
+      "file_path": "/home/qi/ros2_ws/parsed_results_20250828_231347/charts/processing_time_breakdown.png",
+      "file_name": "processing_time_breakdown.png"
+    },
+    {
+      "name": "error_analysis",
+      "file_path": "/home/qi/ros2_ws/parsed_results_20250828_231347/charts/error_analysis.png",
+      "file_name": "error_analysis.png"
+    }
+  ]
+}

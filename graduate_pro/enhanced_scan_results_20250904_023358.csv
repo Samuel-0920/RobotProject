@@ -1,0 +1,10 @@
+Region_Name,Length_mm,Width_mm,Rotation_deg,Waypoints_Before_Optimization,Waypoints_After_Optimization,Coverage_Rate_percent
+Small_Rectangle,250.0,200.0,0.0,1,1,100.0
+Medium_Rectangle,500.0,500.0,0.0,6,4,100.0
+High_Object_Test,200.0,200.0,0.0,1,1,100.0
+Rotated_30deg,194.9,112.3,153.9,1,1,100.0
+Rotated_45deg,223.1,172.5,127.7,1,1,100.0
+Rotated_60deg,282.4,179.5,40.2,1,1,100.0
+Trapezoid,312.0,255.3,80.4,1,1,100.0
+Elongated_Strip_8to1,600.0,30.0,0.0,2,1,100.0
+Irregular_Parallelogram,346.4,255.0,161.9,1,1,100.0

@@ -1,0 +1,7 @@
+Region_Name,Area_cm2,Object_Height_mm,Strategy,Waypoints,Scan_Height_mm,Path_Length_mm,Calculation_Time_ms,Coverage_Rate_percent,Overlap_Ratio
+Small_Square,4.0,50.0,Single_Point,1,400.0,0.0,4.67,100.0,40.0
+Medium_Rectangle,12.6,50.0,Single_Point,1,416.6525641547309,0.0,4.07,100.0,40.0
+Large_Rectangle,32.3,50.0,Multi_Point,6,430,2052.8,4.56,100.0,40.0
+High_Object_Test,4.0,100.0,Single_Point,1,450.0,0.0,4.32,100.0,30.0
+Long_Strip,8.0,50.0,Single_Point,1,400.0,0.0,4.17,100.0,40.0
+Very_Large_Area,56.0,25.0,Multi_Point,12,430,3900.0,4.51,100.0,40.0

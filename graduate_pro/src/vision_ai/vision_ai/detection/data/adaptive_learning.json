@@ -1,0 +1,19 @@
+{
+  "base_thresholds": {},
+  "feature_weights": {
+    "geometric": 0.4,
+    "appearance": 0.2,
+    "shape": 0.3,
+    "spatial": 0.1
+  },
+  "learning_history": {
+    "successes": [],
+    "failures": [],
+    "adjustments": []
+  },
+  "performance_stats": {
+    "total_matches": 0,
+    "successful_matches": 0,
+    "last_update": "2025-01-01T00:00:00"
+  }
+}

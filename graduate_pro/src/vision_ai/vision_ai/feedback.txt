@@ -1,0 +1,352 @@
+[ENHANCED_PIPELINE] SAM2分割完成
+[FEATURES] 开始提取特征，输入: image(720, 1280, 3), mask(720, 1280), depth(720, 1280)
+[FEATURES] 几何特征提取完成: ['hu_moments', 'area', 'perimeter', 'circularity', 'solidity', 'aspect_ratio', 'extent', 'fpfh', 'bbox_dimensions', 'bbox_volume', 'pca_features', 'point_spread', 'shape_context_3d', 'mean_density', 'std_density', 'density_variation', 'centroid_3d', 'surface_normal_stats', 'density_stats', 'density_uniformity']
+[FEATURES] 开始提取特征，输入: image(720, 1280, 3), mask(720, 1280), depth(720, 1280)
+[FEATURES] 几何特征提取完成: ['hu_moments', 'area', 'perimeter', 'circularity', 'solidity', 'aspect_ratio', 'extent', 'fpfh', 'bbox_dimensions', 'bbox_volume', 'pca_features', 'point_spread', 'shape_context_3d', 'mean_density', 'std_density', 'density_variation', 'centroid_3d', 'surface_normal_stats', 'density_stats', 'density_uniformity']
+[ENHANCED_PIPELINE] 单张图像处理完成，检测到 2 个有效目标
+[INFO] [1754339510.423314670] [tracking_node]: 实时检测完成，发现 2 个候选目标
+[INFO] [1754339510.423957047] [tracking_node]: 当前位姿状态 :roll:178.999979,pitch: 0.0, yaw:-89.999981
+[INFO] [1754339510.424510537] [tracking_node]: 📍 当前waypoint数据: {'world_pos': [81.988823, -303.354614, 320.0], 'roll': 178.999979, 'pitch': 0.0, 'yaw': -89.999981, 'timestamp': builtin_interfaces.msg.Time(sec=1754339509, nanosec=341187555)}
+[ENHANCED_TRACKER] 开始追踪目标: lemon_0
+  - 候选检测数量: 2
+[ENHANCED_TRACKER] 同类别候选数量: 2 / 2
+[SIMILARITY] 参考特征类型: ['geometric', 'shape', 'appearance', 'spatial']
+[SIMILARITY] 候选特征类型: ['geometric', 'appearance', 'shape', 'spatial']
+[SIMILARITY_CALC] 开始综合相似度计算
+[SIMILARITY_CALC] 几何相似度: 0.461
+[SIMILARITY_CALC] 形状相似度: 0.955
+[SIMILARITY_CALC] 外观相似度: 0.800
+[SIMILARITY_CALC] 空间相似度: 0.500
+[SIMILARITY_CALC] 综合相似度计算完成: 0.681
+[SIMILARITY] 相似度分解:
+  - geometric: 0.461
+  - shape: 0.955
+  - appearance: 0.800
+  - spatial: 0.500
+[SIMILARITY] 最终得分: 0.681
+[ENHANCED_TRACKER] 候选 1 相似度: 0.681
+[SIMILARITY] 参考特征类型: ['geometric', 'shape', 'appearance', 'spatial']
+[SIMILARITY] 候选特征类型: ['geometric', 'appearance', 'shape', 'spatial']
+[SIMILARITY_CALC] 开始综合相似度计算
+[SIMILARITY_CALC] 几何相似度: 0.368
+[SIMILARITY_CALC] 形状相似度: 0.936
+[SIMILARITY_CALC] 外观相似度: 0.800
+[SIMILARITY_CALC] 空间相似度: 0.500
+[SIMILARITY_CALC] 综合相似度计算完成: 0.638
+[SIMILARITY] 相似度分解:
+  - geometric: 0.368
+  - shape: 0.936
+  - appearance: 0.800
+  - spatial: 0.500
+[SIMILARITY] 最终得分: 0.638
+[ENHANCED_TRACKER] 候选 2 相似度: 0.638
+[ENHANCED_TRACKER] 最佳匹配相似度: 0.681 (阈值: 0.600)
+[ENHANCED_TRACKER] 匹配成功！
+[ENHANCED_TRACKER] 构建追踪结果...
+[ENHANCED_TRACKER] 目标ID: lemon_0
+[ENHANCED_TRACKER] 最小外接矩形: 中心(1175.5, 279.0), 尺寸(196.0x207.0), 角度0.0°
+[ENHANCED_TRACKER] 参考库验证:
+  height_mm: 41.99999999999998
+  background_world_z: 48.119378611800826
+[ENHANCED_TRACKER] 开始物体分析，目标ID: lemon_0
+[ENHANCED_TRACKER] 参考库原始数据:
+  height_mm: 41.99999999999998
+  background_world_z: 48.119378611800826
+  class_name: lemon
+[ENHANCED_TRACKER] ✅ 使用参考库固定数据:
+  高度: 42.0mm (来源: reference_library)
+  背景: 48.1mm (来源: reference_library)
+  类别: lemon
+[ENHANCED_TRACKER] 追踪结果构建完成:
+  抓取坐标: {'x': -79.15836920425009, 'y': -381.894994369163, 'z': 8.108854571636348}
+  物体高度: 42.0mm
+  背景高度: 48.1mm
+  最小外接矩形: 196.0x207.0, 角度0.0°
+[INFO] [1754339510.452070349] [tracking_node]: ✅ 追踪成功，分析抓取条件
+[INFO] [1754339510.452565689] [tracking_node]: 🎯 追踪详情:
+[INFO] [1754339510.453009406] [tracking_node]:   目标ID: lemon_0
+[INFO] [1754339510.453448046] [tracking_node]:   追踪置信度: 0.681
+[INFO] [1754339510.453890425] [tracking_node]:   检测置信度: 0.944
+[INFO] [1754339510.454324163] [tracking_node]:   目标坐标: (-79.2, -381.9, 8.1mm)
+[INFO] [1754339510.454776622] [tracking_node]:   物体高度: 42.0mm
+[INFO] [1754339510.455243477] [tracking_node]:   背景高度: 48.1mm
+[INFO] [1754339510.455720237] [tracking_node]:   推荐夹爪宽度: 500
+[INFO] [1754339510.456178091] [tracking_node]: 📐 移动策略计算:
+[INFO] [1754339510.456622001] [tracking_node]:    3D距离: 179.3mm
+[INFO] [1754339510.457052540] [tracking_node]:    XY移动比例: 0.5
+[INFO] [1754339510.457509791] [tracking_node]:    背景高度: 48.1mm
+[INFO] [1754339510.458005264] [tracking_node]:    物体高度: 42.0mm
+[INFO] [1754339510.458433939] [tracking_node]:    Z补偿: 220mm
+[INFO] [1754339510.458859015] [tracking_node]:    安全移动高度: max(300, 48.1 + 42.0 + 220) = 320.0mm
+[INFO] [1754339510.459304276] [tracking_node]: 🎯 抓取条件评估:
+[INFO] [1754339510.459716791] [tracking_node]:    Z距离: 8.1mm (< 10mm: True)
+[INFO] [1754339510.460123085] [tracking_node]:    XY距离: 179.3mm (< 50mm: False)
+[INFO] [1754339510.460490021] [tracking_node]:    置信度: 0.681 (> 0.85: False)
+[INFO] [1754339510.460899920] [tracking_node]:    稳定性: True
+[INFO] [1754339510.461299002] [tracking_node]:    🎯 准备抓取: False
+[INFO] [1754339510.461728530] [tracking_node]: ⏳ 未满足抓取条件，继续追踪
+
+============================================================
+🎯 追踪步骤 8 - 请确认追踪结果
+============================================================
+📋 当前追踪结果:
+  🎯 目标坐标: (-79.2, -381.9, 8.1mm)
+  🔍 追踪置信度: 0.681
+
+💬 命令选项:
+  's' 或 'success' - 确认追踪成功，继续移动
+  'f' 或 'fail'    - 标记追踪失败
+  'q' 或 'quit'    - 退出追踪
+============================================================
+请输入命令 (s/f/q): f
+[INFO] [1754339514.628505904] [tracking_node]: ❌ 用户标记追踪失败
+[INFO] [1754339514.628866855] [tracking_node]: 当前位姿状态 :roll:178.999979,pitch: 0.0, yaw:-89.999981
+[DATA_RECORDER] 记录第 8 步追踪数据 (包含细粒度特征)
+[INFO] [1754339514.642680047] [tracking_node]: 💾 追踪参数历史已保存: scan_output_20250804_212836/tracking_results/tracking_parameters_history.json
+[INFO] [1754339514.758566625] [tracking_node]: 🔍 执行第 9 步追踪
+[INFO] [1754339514.759210337] [tracking_node]: 📊 图像信息:
+[INFO] [1754339514.759643720] [tracking_node]:   RGB: (720, 1280, 3), dtype: uint8
+[INFO] [1754339514.760023466] [tracking_node]:   Depth: (720, 1280), dtype: uint16
+[INFO] [1754339514.760575572] [tracking_node]:   Depth range: 0-41869
+[INFO] [1754339514.761228796] [tracking_node]: 🔍 执行实时检测...
+[INFO] [1754339514.761617062] [tracking_node]: 预处理后图像: RGB(720, 1280, 3), Depth(720, 1280)
+[INFO] [1754339514.762003927] [tracking_node]: 当前位姿状态 :roll:178.999979,pitch: 0.0, yaw:-89.999981
+[ENHANCED_PIPELINE] 开始处理单张图像...
+
+0: 384x640 2 lemons, 5.9ms
+Speed: 1.2ms preprocess, 5.9ms inference, 1.5ms postprocess per image at shape (1, 3, 384, 640)
+[YOLO] 检测到 2 个目标 (置信度 >= 0.7)
+[ENHANCED_PIPELINE] YOLO检测到 2 个目标
+[SAM2] 完成 2 个目标的分割
+[ENHANCED_PIPELINE] SAM2分割完成
+[FEATURES] 开始提取特征，输入: image(720, 1280, 3), mask(720, 1280), depth(720, 1280)
+[FEATURES] 几何特征提取完成: ['hu_moments', 'area', 'perimeter', 'circularity', 'solidity', 'aspect_ratio', 'extent', 'fpfh', 'bbox_dimensions', 'bbox_volume', 'pca_features', 'point_spread', 'shape_context_3d', 'mean_density', 'std_density', 'density_variation', 'centroid_3d', 'surface_normal_stats', 'density_stats', 'density_uniformity']
+[FEATURES] 开始提取特征，输入: image(720, 1280, 3), mask(720, 1280), depth(720, 1280)
+[FEATURES] 几何特征提取完成: ['hu_moments', 'area', 'perimeter', 'circularity', 'solidity', 'aspect_ratio', 'extent', 'fpfh', 'bbox_dimensions', 'bbox_volume', 'pca_features', 'point_spread', 'shape_context_3d', 'mean_density', 'std_density', 'density_variation', 'centroid_3d', 'surface_normal_stats', 'density_stats', 'density_uniformity']
+[ENHANCED_PIPELINE] 单张图像处理完成，检测到 2 个有效目标
+[INFO] [1754339515.822861628] [tracking_node]: 实时检测完成，发现 2 个候选目标
+[INFO] [1754339515.823429227] [tracking_node]: 当前位姿状态 :roll:178.999979,pitch: 0.0, yaw:-89.999981
+[INFO] [1754339515.824090702] [tracking_node]: 📍 当前waypoint数据: {'world_pos': [81.988823, -303.354614, 320.0], 'roll': 178.999979, 'pitch': 0.0, 'yaw': -89.999981, 'timestamp': builtin_interfaces.msg.Time(sec=1754339514, nanosec=741346653)}
+[ENHANCED_TRACKER] 开始追踪目标: lemon_0
+  - 候选检测数量: 2
+[ENHANCED_TRACKER] 同类别候选数量: 2 / 2
+[SIMILARITY] 参考特征类型: ['geometric', 'shape', 'appearance', 'spatial']
+[SIMILARITY] 候选特征类型: ['geometric', 'appearance', 'shape', 'spatial']
+[SIMILARITY_CALC] 开始综合相似度计算
+[SIMILARITY_CALC] 几何相似度: 0.461
+[SIMILARITY_CALC] 形状相似度: 0.955
+[SIMILARITY_CALC] 外观相似度: 0.800
+[SIMILARITY_CALC] 空间相似度: 0.500
+[SIMILARITY_CALC] 综合相似度计算完成: 0.681
+[SIMILARITY] 相似度分解:
+  - geometric: 0.461
+  - shape: 0.955
+  - appearance: 0.800
+  - spatial: 0.500
+[SIMILARITY] 最终得分: 0.681
+[ENHANCED_TRACKER] 候选 1 相似度: 0.681
+[SIMILARITY] 参考特征类型: ['geometric', 'shape', 'appearance', 'spatial']
+[SIMILARITY] 候选特征类型: ['geometric', 'appearance', 'shape', 'spatial']
+[SIMILARITY_CALC] 开始综合相似度计算
+[SIMILARITY_CALC] 几何相似度: 0.368
+[SIMILARITY_CALC] 形状相似度: 0.934
+[SIMILARITY_CALC] 外观相似度: 0.800
+[SIMILARITY_CALC] 空间相似度: 0.500
+[SIMILARITY_CALC] 综合相似度计算完成: 0.637
+[SIMILARITY] 相似度分解:
+  - geometric: 0.368
+  - shape: 0.934
+  - appearance: 0.800
+  - spatial: 0.500
+[SIMILARITY] 最终得分: 0.637
+[ENHANCED_TRACKER] 候选 2 相似度: 0.637
+[ENHANCED_TRACKER] 最佳匹配相似度: 0.681 (阈值: 0.600)
+[ENHANCED_TRACKER] 匹配成功！
+[ENHANCED_TRACKER] 构建追踪结果...
+[ENHANCED_TRACKER] 目标ID: lemon_0
+[ENHANCED_TRACKER] 最小外接矩形: 中心(1175.5, 279.0), 尺寸(196.0x207.0), 角度0.0°
+[ENHANCED_TRACKER] 参考库验证:
+  height_mm: 41.99999999999998
+  background_world_z: 48.119378611800826
+[ENHANCED_TRACKER] 开始物体分析，目标ID: lemon_0
+[ENHANCED_TRACKER] 参考库原始数据:
+  height_mm: 41.99999999999998
+  background_world_z: 48.119378611800826
+  class_name: lemon
+[ENHANCED_TRACKER] ✅ 使用参考库固定数据:
+  高度: 42.0mm (来源: reference_library)
+  背景: 48.1mm (来源: reference_library)
+  类别: lemon
+[ENHANCED_TRACKER] 追踪结果构建完成:
+  抓取坐标: {'x': -80.09327634985239, 'y': -380.2368046711272, 'z': 6.122722892547616}
+  物体高度: 42.0mm
+  背景高度: 48.1mm
+  最小外接矩形: 196.0x207.0, 角度0.0°
+[INFO] [1754339515.852601340] [tracking_node]: ✅ 追踪成功，分析抓取条件
+[INFO] [1754339515.853121750] [tracking_node]: 🎯 追踪详情:
+[INFO] [1754339515.853584998] [tracking_node]:   目标ID: lemon_0
+[INFO] [1754339515.853979748] [tracking_node]:   追踪置信度: 0.681
+[INFO] [1754339515.854286734] [tracking_node]:   检测置信度: 0.943
+[INFO] [1754339515.854580326] [tracking_node]:   目标坐标: (-80.1, -380.2, 6.1mm)
+[INFO] [1754339515.854879935] [tracking_node]:   物体高度: 42.0mm
+[INFO] [1754339515.855169797] [tracking_node]:   背景高度: 48.1mm
+[INFO] [1754339515.855456849] [tracking_node]:   推荐夹爪宽度: 500
+[INFO] [1754339515.855781083] [tracking_node]: 📐 移动策略计算:
+[INFO] [1754339515.856080025] [tracking_node]:    3D距离: 179.4mm
+[INFO] [1754339515.856468292] [tracking_node]:    XY移动比例: 0.5
+[INFO] [1754339515.856925860] [tracking_node]:    背景高度: 48.1mm
+[INFO] [1754339515.857366762] [tracking_node]:    物体高度: 42.0mm
+[INFO] [1754339515.857794112] [tracking_node]:    Z补偿: 220mm
+[INFO] [1754339515.858235217] [tracking_node]:    安全移动高度: max(300, 48.1 + 42.0 + 220) = 320.0mm
+[INFO] [1754339515.858694781] [tracking_node]: 🎯 抓取条件评估:
+[INFO] [1754339515.859122213] [tracking_node]:    Z距离: 6.1mm (< 10mm: True)
+[INFO] [1754339515.859553936] [tracking_node]:    XY距离: 179.4mm (< 50mm: False)
+[INFO] [1754339515.859977491] [tracking_node]:    置信度: 0.681 (> 0.85: False)
+[INFO] [1754339515.860374498] [tracking_node]:    稳定性: True
+[INFO] [1754339515.860779414] [tracking_node]:    🎯 准备抓取: False
+[INFO] [1754339515.861157083] [tracking_node]: ⏳ 未满足抓取条件，继续追踪
+
+============================================================
+🎯 追踪步骤 9 - 请确认追踪结果
+============================================================
+📋 当前追踪结果:
+  🎯 目标坐标: (-80.1, -380.2, 6.1mm)
+  🔍 追踪置信度: 0.681
+
+💬 命令选项:
+  's' 或 'success' - 确认追踪成功，继续移动
+  'f' 或 'fail'    - 标记追踪失败
+  'q' 或 'quit'    - 退出追踪
+============================================================
+请输入命令 (s/f/q): f
+[INFO] [1754339518.231809432] [tracking_node]: ❌ 用户标记追踪失败
+[INFO] [1754339518.232166921] [tracking_node]: 当前位姿状态 :roll:178.999979,pitch: 0.0, yaw:-89.999981
+[DATA_RECORDER] 记录第 9 步追踪数据 (包含细粒度特征)
+[INFO] [1754339518.246456046] [tracking_node]: 💾 追踪参数历史已保存: scan_output_20250804_212836/tracking_results/tracking_parameters_history.json
+[INFO] [1754339518.412177168] [tracking_node]: 🔍 执行第 10 步追踪
+[INFO] [1754339518.413055376] [tracking_node]: 📊 图像信息:
+[INFO] [1754339518.413627904] [tracking_node]:   RGB: (720, 1280, 3), dtype: uint8
+[INFO] [1754339518.414155841] [tracking_node]:   Depth: (720, 1280), dtype: uint16
+[INFO] [1754339518.415012432] [tracking_node]:   Depth range: 0-7870
+[INFO] [1754339518.415707720] [tracking_node]: 🔍 执行实时检测...
+[INFO] [1754339518.416178033] [tracking_node]: 预处理后图像: RGB(720, 1280, 3), Depth(720, 1280)
+[INFO] [1754339518.416668574] [tracking_node]: 当前位姿状态 :roll:178.999979,pitch: 0.0, yaw:-89.999981
+[ENHANCED_PIPELINE] 开始处理单张图像...
+
+0: 384x640 2 lemons, 6.6ms
+Speed: 1.7ms preprocess, 6.6ms inference, 1.6ms postprocess per image at shape (1, 3, 384, 640)
+[YOLO] 检测到 2 个目标 (置信度 >= 0.7)
+[ENHANCED_PIPELINE] YOLO检测到 2 个目标
+[SAM2] 完成 2 个目标的分割
+[ENHANCED_PIPELINE] SAM2分割完成
+[FEATURES] 开始提取特征，输入: image(720, 1280, 3), mask(720, 1280), depth(720, 1280)
+[FEATURES] 几何特征提取完成: ['hu_moments', 'area', 'perimeter', 'circularity', 'solidity', 'aspect_ratio', 'extent', 'fpfh', 'bbox_dimensions', 'bbox_volume', 'pca_features', 'point_spread', 'shape_context_3d', 'mean_density', 'std_density', 'density_variation', 'centroid_3d', 'surface_normal_stats', 'density_stats', 'density_uniformity']
+[FEATURES] 开始提取特征，输入: image(720, 1280, 3), mask(720, 1280), depth(720, 1280)
+[FEATURES] 几何特征提取完成: ['hu_moments', 'area', 'perimeter', 'circularity', 'solidity', 'aspect_ratio', 'extent', 'fpfh', 'bbox_dimensions', 'bbox_volume', 'pca_features', 'point_spread', 'shape_context_3d', 'mean_density', 'std_density', 'density_variation', 'centroid_3d', 'surface_normal_stats', 'density_stats', 'density_uniformity']
+[ENHANCED_PIPELINE] 单张图像处理完成，检测到 2 个有效目标
+[INFO] [1754339519.486001396] [tracking_node]: 实时检测完成，发现 2 个候选目标
+[INFO] [1754339519.486599040] [tracking_node]: 当前位姿状态 :roll:178.999979,pitch: 0.0, yaw:-89.999981
+[INFO] [1754339519.487059325] [tracking_node]: 📍 当前waypoint数据: {'world_pos': [81.988823, -303.354614, 320.0], 'roll': 178.999979, 'pitch': 0.0, 'yaw': -89.999981, 'timestamp': builtin_interfaces.msg.Time(sec=1754339518, nanosec=341366464)}
+[ENHANCED_TRACKER] 开始追踪目标: lemon_0
+  - 候选检测数量: 2
+[ENHANCED_TRACKER] 同类别候选数量: 2 / 2
+[SIMILARITY] 参考特征类型: ['geometric', 'shape', 'appearance', 'spatial']
+[SIMILARITY] 候选特征类型: ['geometric', 'appearance', 'shape', 'spatial']
+[SIMILARITY_CALC] 开始综合相似度计算
+[SIMILARITY_CALC] 几何相似度: 0.461
+[SIMILARITY_CALC] 形状相似度: 0.956
+[SIMILARITY_CALC] 外观相似度: 0.800
+[SIMILARITY_CALC] 空间相似度: 0.500
+[SIMILARITY_CALC] 综合相似度计算完成: 0.681
+[SIMILARITY] 相似度分解:
+  - geometric: 0.461
+  - shape: 0.956
+  - appearance: 0.800
+  - spatial: 0.500
+[SIMILARITY] 最终得分: 0.681
+[ENHANCED_TRACKER] 候选 1 相似度: 0.681
+[SIMILARITY] 参考特征类型: ['geometric', 'shape', 'appearance', 'spatial']
+[SIMILARITY] 候选特征类型: ['geometric', 'appearance', 'shape', 'spatial']
+[SIMILARITY_CALC] 开始综合相似度计算
+[SIMILARITY_CALC] 几何相似度: 0.366
+[SIMILARITY_CALC] 形状相似度: 0.934
+[SIMILARITY_CALC] 外观相似度: 0.800
+[SIMILARITY_CALC] 空间相似度: 0.500
+[SIMILARITY_CALC] 综合相似度计算完成: 0.637
+[SIMILARITY] 相似度分解:
+  - geometric: 0.366
+  - shape: 0.934
+  - appearance: 0.800
+  - spatial: 0.500
+[SIMILARITY] 最终得分: 0.637
+[ENHANCED_TRACKER] 候选 2 相似度: 0.637
+[ENHANCED_TRACKER] 最佳匹配相似度: 0.681 (阈值: 0.600)
+[ENHANCED_TRACKER] 匹配成功！
+[ENHANCED_TRACKER] 构建追踪结果...
+[ENHANCED_TRACKER] 目标ID: lemon_0
+[ENHANCED_TRACKER] 最小外接矩形: 中心(1175.5, 279.0), 尺寸(196.0x207.0), 角度0.0°
+[ENHANCED_TRACKER] 参考库验证:
+  height_mm: 41.99999999999998
+  background_world_z: 48.119378611800826
+[ENHANCED_TRACKER] 开始物体分析，目标ID: lemon_0
+[ENHANCED_TRACKER] 参考库原始数据:
+  height_mm: 41.99999999999998
+  background_world_z: 48.119378611800826
+  class_name: lemon
+[ENHANCED_TRACKER] ✅ 使用参考库固定数据:
+  高度: 42.0mm (来源: reference_library)
+  背景: 48.1mm (来源: reference_library)
+  类别: lemon
+[ENHANCED_TRACKER] 追踪结果构建完成:
+  抓取坐标: {'x': -79.78425220869528, 'y': -380.28720134843894, 'z': 6.118908132595746}
+  物体高度: 42.0mm
+  背景高度: 48.1mm
+  最小外接矩形: 196.0x207.0, 角度0.0°
+[INFO] [1754339519.514084092] [tracking_node]: ✅ 追踪成功，分析抓取条件
+[INFO] [1754339519.514607041] [tracking_node]: 🎯 追踪详情:
+[INFO] [1754339519.515092429] [tracking_node]:   目标ID: lemon_0
+[INFO] [1754339519.515541273] [tracking_node]:   追踪置信度: 0.681
+[INFO] [1754339519.515986758] [tracking_node]:   检测置信度: 0.944
+[INFO] [1754339519.516432147] [tracking_node]:   目标坐标: (-79.8, -380.3, 6.1mm)
+[INFO] [1754339519.516901392] [tracking_node]:   物体高度: 42.0mm
+[INFO] [1754339519.517346227] [tracking_node]:   背景高度: 48.1mm
+[INFO] [1754339519.517835820] [tracking_node]:   推荐夹爪宽度: 500
+[INFO] [1754339519.518182401] [tracking_node]: 📐 移动策略计算:
+[INFO] [1754339519.518488759] [tracking_node]:    3D距离: 179.1mm
+[INFO] [1754339519.518783803] [tracking_node]:    XY移动比例: 0.5
+[INFO] [1754339519.519058655] [tracking_node]:    背景高度: 48.1mm
+[INFO] [1754339519.519346092] [tracking_node]:    物体高度: 42.0mm
+[INFO] [1754339519.519781133] [tracking_node]:    Z补偿: 220mm
+[INFO] [1754339519.520211671] [tracking_node]:    安全移动高度: max(300, 48.1 + 42.0 + 220) = 320.0mm
+[INFO] [1754339519.520680417] [tracking_node]: 🎯 抓取条件评估:
+[INFO] [1754339519.521124223] [tracking_node]:    Z距离: 6.1mm (< 10mm: True)
+[INFO] [1754339519.521546574] [tracking_node]:    XY距离: 179.1mm (< 50mm: False)
+[INFO] [1754339519.522007197] [tracking_node]:    置信度: 0.681 (> 0.85: False)
+[INFO] [1754339519.522468741] [tracking_node]:    稳定性: True
+[INFO] [1754339519.522876745] [tracking_node]:    🎯 准备抓取: False
+[INFO] [1754339519.523230255] [tracking_node]: ⏳ 未满足抓取条件，继续追踪
+
+============================================================
+🎯 追踪步骤 10 - 请确认追踪结果
+============================================================
+📋 当前追踪结果:
+  🎯 目标坐标: (-79.8, -380.3, 6.1mm)
+  🔍 追踪置信度: 0.681
+
+💬 命令选项:
+  's' 或 'success' - 确认追踪成功，继续移动
+  'f' 或 'fail'    - 标记追踪失败
+  'q' 或 'quit'    - 退出追踪
+============================================================
+请输入命令 (s/f/q): f
+[INFO] [1754339521.973699407] [tracking_node]: ❌ 用户标记追踪失败
+[INFO] [1754339521.974043361] [tracking_node]: 当前位姿状态 :roll:178.999979,pitch: 0.0, yaw:-89.999981
+[DATA_RECORDER] 记录第 10 步追踪数据 (包含细粒度特征)
+[INFO] [1754339521.991372944] [tracking_node]: 💾 追踪参数历史已保存: scan_output_20250804_212836/tracking_results/tracking_parameters_history.json
+[INFO] [1754339521.991744495] [tracking_node]: 🏁 追踪会话完成，开始收集反馈
+[INFO] [1754339521.992058154] [tracking_node]: ✅ 所有步骤已在实时过程中收集反馈，跳过额外反馈收集
+[ONLINE_LEARNER] 学习数据已保存: /home/qi/ros2_ws/install/vision_ai/lib/python3.10/site-packages/vision_ai/tracking_system/adaptive_learning/../../data/user_profiles/default_user/adaptive_learning/default_user_online_learning.json
+[DATA_RECORDER] 会话数据已保存: scan_output_20250804_212836/tracking_data/tracking_session.json
+[DATA_RECORDER] 会话摘要已保存: scan_output_20250804_212836/tracking_data/session_summary.txt
+[INFO] [1754339521.994140755] [tracking_node]: ✅ 反馈收集完成，学习数据已更新
+[INFO] [1754339521.994687610] [tracking_node]: 📊 追踪完成统计: 总步数=10, 目标=lemon_0

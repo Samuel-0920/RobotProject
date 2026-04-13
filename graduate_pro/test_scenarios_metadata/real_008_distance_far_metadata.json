@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_008_distance_far",
+  "complexity_level": 3,
+  "lighting_condition": "normal",
+  "object_count": 4,
+  "interference_objects": 1,
+  "occlusion_level": 0.0,
+  "scene_type": "distance_variation",
+  "notes": "Far view (> 60cm) with multiple small objects"
+}

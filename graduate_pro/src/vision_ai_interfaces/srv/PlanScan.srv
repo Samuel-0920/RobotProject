@@ -1,0 +1,14 @@
+# Request: scan parameters
+string mode                    # preset or manual
+float64 object_height         # object height in mm
+geometry_msgs/Point[] points  # scan region 4 points
+
+---
+
+# Response: scan plan
+bool success                  # planning success
+string message               # error message or status
+ScanPlan scan_plan          # scan plan details
+geometry_msgs/Pose[] waypoints
+float64 path_length
+float64 coverage

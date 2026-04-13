@@ -1,0 +1,37 @@
+{
+  "ui": {
+    "enabled": true,
+    "window_size": [1200, 800],
+    "image_display_size": [750, 400],
+    "max_candidates_display": 9,
+    "auto_refresh_rate": 100,
+    "colors": {
+      "best_match": [0, 255, 0],
+      "candidate": [255, 165, 0], 
+      "selected": [0, 0, 255],
+      "background": [240, 240, 240]
+    }
+  },
+  "buttons": {
+    "font_size": 12,
+    "button_height": 40,
+    "button_spacing": 10,
+    "colors": {
+      "correct": "#4CAF50",
+      "wrong": "#F44336", 
+      "quick_move": "#2196F3",
+      "record": "#FF9800",
+      "auto": "#9C27B0",
+      "grasp": "#4CAF50",
+      "cancel": "#757575"
+    }
+  },
+  "visualization": {
+    "show_confidence_text": true,
+    "show_id_labels": true,
+    "bbox_thickness": 2,
+    "font_scale": 0.7,
+    "text_color": [255, 255, 255],
+    "text_bg_color": [0, 0, 0]
+  }
+}

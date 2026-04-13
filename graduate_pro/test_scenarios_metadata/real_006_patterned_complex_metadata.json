@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_006_patterned_complex",
+  "complexity_level": 5,
+  "lighting_condition": "normal",
+  "object_count": 3,
+  "interference_objects": 2,
+  "occlusion_level": 0.4,
+  "scene_type": "patterned_background",
+  "notes": "Complex patterns with camouflaging effects on target detection"
+}

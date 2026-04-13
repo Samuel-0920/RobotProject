@@ -1,0 +1,49 @@
+# config/default_config.yaml - 默认配置文件
+
+# 检测器配置
+detector:
+  type: yolo
+  model_path: /home/qi/下载/best2.pt
+  confidence_threshold: 0.5
+
+# 分割器配置
+segmentor:
+  type: sam2
+  checkpoint: ~/ros2_ws/src/vision_ai/models/sam2/sam2_hiera_large.pt
+  config: sam2_hiera_l.yaml
+  device: cuda
+
+# 特征提取配置
+features:
+  color:
+    histogram_bins: 64
+  shape:
+    enabled: true
+  spatial:
+    enabled: true
+
+# 相机配置
+camera:
+  intrinsics:
+    fx: 912.694580078125
+    fy: 910.309814453125
+    cx: 640
+    cy: 360
+
+# 类别名称映射
+class_names:
+  1: banana
+  2: carrot
+  3: corn
+  4: lemon
+  5: greenlemon
+  6: strawberry
+  7: tomato
+  8: potato
+  9: redpepper
+
+# 输出配置
+output:
+  save_masks: true
+  save_features: true
+  save_visualizations: true

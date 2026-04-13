@@ -1,0 +1,140 @@
+{
+    "detector": {
+        "type": "yolo",
+        "model_path": "models/yolo/yolov8n.pt",
+        "confidence_threshold": 0.4
+    },
+    "segmentor": {
+        "type": "sam2",
+        "config_name": "sam2_hiera_l.yaml",
+        "checkpoint_path": "models/sam2/sam2_hiera_large.pt",
+        "device": "cuda"
+    },
+  "camera": {
+    "intrinsics": {
+      "fx": 912.694580078125,
+      "fy": 910.309814453125,
+      "cx": 624.051574707031,
+      "cy": 320.749542236328
+    },
+    "hand_eye_calibration": {
+      "translation": [
+        0.06637719970480799,
+        -0.032133912794949385,
+        0.02259679892714925
+      ],
+      "quaternion": [
+        0.0013075170827278532,
+        -0.0024892917521336377,
+        0.7106597907015502,
+        0.7035302095188808
+      ]
+    },
+    "depth_scale": 1000.0,
+    "depth_range": [
+      0.01,
+      2.0
+    ]
+  },
+  "features": {
+    "color": {
+      "histogram_bins": 32,
+      "color_spaces": [
+        "RGB",
+        "HSV"
+      ],
+      "enabled": true
+    },
+    "geometric": {
+      "enabled": true,
+      "fpfh": {
+        "radius": 0.05,
+        "max_neighbors": 100,
+        "enabled": true
+      },
+      "pca": {
+        "enabled": true
+      },
+      "shape_context_3d": {
+        "bins_r": 5,
+        "bins_theta": 8,
+        "bins_phi": 6,
+        "enabled": true
+      },
+      "density_features": {
+        "k_neighbors": 10,
+        "enabled": true
+      }
+    },
+    "shape": {
+      "enabled": true,
+      "hu_moments": {
+        "enabled": true,
+        "use_robust": true,
+        "smooth_kernel_size": 7
+      },
+      "fourier_descriptors": {
+        "enabled": true,
+        "n_descriptors": 8
+      },
+      "contour_features": {
+        "enabled": true
+      }
+    },
+    "spatial": {
+      "enabled": true,
+      "region_grid": [
+        3,
+        3
+      ],
+      "include_3d_coords": true
+    }
+  },
+  "similarity": {
+    "feature_weights": {
+      "geometric": 0.4,
+      "appearance": 0.2,
+      "shape": 0.3,
+      "spatial": 0.1
+    },
+    "geometric_weights": {
+      "fpfh": 0.4,
+      "pca": 0.3,
+      "bbox": 0.2,
+      "shape_context_3d": 0.1
+    },
+    "thresholds": {
+      "overall_match": 0.75,
+      "high_confidence": 0.85,
+      "low_confidence": 0.6
+    }
+  },
+  "adaptive_learning": {
+    "enabled": true,
+    "learning_rate": 0.1,
+    "min_samples_for_optimization": 50,
+    "optimization_interval": 100,
+    "data_retention_days": 30,
+    "auto_save": true,
+    "learning_data_file": "data/adaptive_learning.json"
+  },
+  "output": {
+    "save_visualizations": true,
+    "save_features": true,
+    "save_masks": true,
+    "visualization_quality": "high",
+    "feature_format": "json"
+  },
+  "performance": {
+    "point_cloud_sampling": 5,
+    "max_features_per_object": 1000,
+    "parallel_processing": false,
+    "memory_optimization": true
+  },
+  "debug": {
+    "enabled": false,
+    "verbose_logging": false,
+    "save_intermediate_results": false,
+    "timing_analysis": false
+  }
+}

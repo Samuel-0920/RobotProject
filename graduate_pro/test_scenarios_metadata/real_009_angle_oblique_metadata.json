@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_009_angle_oblique",
+  "complexity_level": 3,
+  "lighting_condition": "normal",
+  "object_count": 3,
+  "interference_objects": 1,
+  "occlusion_level": 0.2,
+  "scene_type": "angle_variation",
+  "notes": "Oblique viewing angle (45 degrees) creating perspective challenges"
+}

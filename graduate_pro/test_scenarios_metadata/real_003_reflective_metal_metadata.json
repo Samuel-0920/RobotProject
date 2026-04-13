@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_003_reflective_metal",
+  "complexity_level": 3,
+  "lighting_condition": "bright",
+  "object_count": 2,
+  "interference_objects": 0,
+  "occlusion_level": 0.0,
+  "scene_type": "reflective_surfaces",
+  "notes": "Metallic objects creating reflections and specular highlights"
+}

@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_005_patterned_fabric",
+  "complexity_level": 3,
+  "lighting_condition": "normal",
+  "object_count": 4,
+  "interference_objects": 0,
+  "occlusion_level": 0.0,
+  "scene_type": "patterned_background",
+  "notes": "Objects placed on patterned fabric or textured surfaces"
+}

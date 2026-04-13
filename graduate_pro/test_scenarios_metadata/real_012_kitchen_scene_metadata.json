@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_012_kitchen_scene",
+  "complexity_level": 5,
+  "lighting_condition": "bright",
+  "object_count": 4,
+  "interference_objects": 3,
+  "occlusion_level": 0.4,
+  "scene_type": "kitchen_environment",
+  "notes": "Real kitchen counter with utensils, containers, and food items"
+}

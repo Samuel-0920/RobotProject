@@ -1,0 +1,304 @@
+(rel_env) qi@wpq:~/ros2_ws$ bash /home/qi/ros2_ws/src/vision_ai/vision_ai/ros2_structure_query.sh
+=== ROS2 项目结构查询 ===
+
+📁 项目整体结构:
+==================
+./install/vision_ai_interfaces
+./install/vision_ai_interfaces/share/ament_index/resource_index/parent_prefix_path/vision_ai_interfaces
+./install/vision_ai_interfaces/share/ament_index/resource_index/packages/vision_ai_interfaces
+./install/vision_ai_interfaces/share/ament_index/resource_index/rosidl_interfaces/vision_ai_interfaces
+./install/vision_ai_interfaces/share/ament_index/resource_index/package_run_dependencies/vision_ai_interfaces
+./install/vision_ai_interfaces/share/colcon-core/packages/vision_ai_interfaces
+./install/vision_ai_interfaces/share/vision_ai_interfaces
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/export_vision_ai_interfaces__rosidl_generator_cExport-noconfig.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/vision_ai_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/export_vision_ai_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/vision_ai_interfaces__rosidl_typesupport_cExport.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/vision_ai_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/export_vision_ai_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/export_vision_ai_interfaces__rosidl_generator_cExport.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/vision_ai_interfaces__rosidl_typesupport_cppExport.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/vision_ai_interfacesConfig-version.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/vision_ai_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/vision_ai_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/vision_ai_interfacesConfig.cmake
+./install/vision_ai_interfaces/share/vision_ai_interfaces/cmake/export_vision_ai_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+
+📦 当前ROS2包列表:
+==================
+./install/camera_node/share/camera_node
+./install/vision_ai_interfaces/share/vision_ai_interfaces
+./install/xarm_controller/share/xarm_controller
+./src/camera_node
+./src/vision_ai
+./src/vision_ai_interfaces
+./src/xarm_controller
+
+👁️ Vision相关包结构:
+====================
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/srv/_process_detection.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/srv/_plan_scan.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/srv/_execute_scan.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/srv/_process_stitching.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/srv/__init__.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/msg/_stitch_result.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/msg/_waypoint.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/msg/_detection_result.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/msg/_detected_object.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/msg/_image_data.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/msg/_scan_plan.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/msg/__init__.py
+./install/vision_ai_interfaces/lib/python3.10/site-packages/vision_ai_interfaces/__init__.py
+./build/vision_ai_interfaces/ament_cmake_python/vision_ai_interfaces/setup.py
+./build/vision_ai_interfaces/ament_cmake_python/vision_ai_interfaces/vision_ai_interfaces/srv/_process_detection.py
+./build/vision_ai_interfaces/ament_cmake_python/vision_ai_interfaces/vision_ai_interfaces/srv/_plan_scan.py
+./build/vision_ai_interfaces/ament_cmake_python/vision_ai_interfaces/vision_ai_interfaces/srv/_execute_scan.py
+./build/vision_ai_interfaces/ament_cmake_python/vision_ai_interfaces/vision_ai_interfaces/srv/_process_stitching.py
+./build/vision_ai_interfaces/ament_cmake_python/vision_ai_interfaces/vision_ai_interfaces/srv/__init__.py
+./build/vision_ai_interfaces/ament_cmake_python/vision_ai_interfaces/vision_ai_interfaces/msg/_stitch_result.py
+
+🤖 现有ROS2节点:
+===============
+./install/xarm_controller/lib/python3.10/site-packages/xarm_controller/xarm_controller_node.py
+./install/camera_node/lib/python3.10/site-packages/camera_node/realsense_publisher.py
+./install/camera_node/lib/python3.10/site-packages/camera_node/camera_viewer.py
+./build/xarm_controller/build/lib/xarm_controller/xarm_controller_node.py
+./build/camera_node/build/lib/camera_node/realsense_publisher.py
+./build/camera_node/build/lib/camera_node/camera_viewer.py
+./src/xarm_controller/xarm_controller/xarm_controller_node.py
+./src/camera_node/camera_node/realsense_publisher.py
+./src/camera_node/camera_node/camera_viewer.py
+./src/vision_ai/quick_test_detection.py
+./src/vision_ai/vision_ai/debug_trigger_test.py
+./src/vision_ai/vision_ai/detection_node_backup.py
+./src/vision_ai/vision_ai/tracking_node.py
+./src/vision_ai/vision_ai/scan_executor_node.py
+./src/vision_ai/vision_ai/detection_node.py
+./src/vision_ai/vision_ai/static_grasp_system.py
+./src/vision_ai/vision_ai/gui_config_node.py
+./src/vision_ai/vision_ai/detection_monitor.py
+./src/vision_ai/vision_ai/trigger_detection.py
+./src/vision_ai/vision_ai/scan_planner_node.py
+./src/vision_ai/vision_ai/smart_stitcher_node.py
+
+📡 现有话题和消息类型:
+====================
+        self.joint_state_pub = self.create_publisher(JointState, '/xarm/joint_states', 10)
+        self.current_pose_pub = self.create_publisher(PoseStamped, '/xarm/current_pose', 10)
+        self.arm_state_pub = self.create_publisher(String, '/xarm/state', 10)
+        self.gripper_state_pub = self.create_publisher(Float64, '/xarm/gripper_position', 10)
+        self.gripper_status_pub = self.create_publisher(String, '/xarm/gripper_status', 10)
+        self.target_pose_sub = self.create_subscription(
+        self.joint_target_sub = self.create_subscription(
+        self.gripper_position_sub = self.create_subscription(
+        self.color_pub = self.create_publisher(Image, '/camera/color/image_raw', 10)
+        self.depth_pub = self.create_publisher(Image, '/camera/depth/image_raw', 10)
+        self.color_info_pub = self.create_publisher(CameraInfo, '/camera/color/camera_info', 10)
+        self.depth_info_pub = self.create_publisher(CameraInfo, '/camera/depth/camera_info', 10)
+        self.color_sub = self.create_subscription(
+        self.depth_sub = self.create_subscription(
+        self.joint_state_pub = self.create_publisher(JointState, '/xarm/joint_states', 10)
+        self.current_pose_pub = self.create_publisher(PoseStamped, '/xarm/current_pose', 10)
+        self.arm_state_pub = self.create_publisher(String, '/xarm/state', 10)
+        self.gripper_state_pub = self.create_publisher(Float64, '/xarm/gripper_position', 10)
+        self.gripper_status_pub = self.create_publisher(String, '/xarm/gripper_status', 10)
+        self.target_pose_sub = self.create_subscription(
+        self.joint_target_sub = self.create_subscription(
+        self.gripper_position_sub = self.create_subscription(
+        self.color_pub = self.create_publisher(Image, '/camera/color/image_raw', 10)
+        self.depth_pub = self.create_publisher(Image, '/camera/depth/image_raw', 10)
+        self.color_info_pub = self.create_publisher(CameraInfo, '/camera/color/camera_info', 10)
+        self.depth_info_pub = self.create_publisher(CameraInfo, '/camera/depth/camera_info', 10)
+        self.color_sub = self.create_subscription(
+        self.depth_sub = self.create_subscription(
+        self.joint_state_pub = self.create_publisher(JointState, '/xarm/joint_states', 10)
+        self.current_pose_pub = self.create_publisher(PoseStamped, '/xarm/current_pose', 10)
+        self.arm_state_pub = self.create_publisher(String, '/xarm/state', 10)
+        self.gripper_state_pub = self.create_publisher(Float64, '/xarm/gripper_position', 10)
+        self.gripper_status_pub = self.create_publisher(String, '/xarm/gripper_status', 10)
+        self.target_pose_sub = self.create_subscription(
+        self.joint_target_sub = self.create_subscription(
+        self.gripper_position_sub = self.create_subscription(
+        self.color_pub = self.create_publisher(Image, '/camera/color/image_raw', 10)
+        self.depth_pub = self.create_publisher(Image, '/camera/depth/image_raw', 10)
+        self.color_info_pub = self.create_publisher(CameraInfo, '/camera/color/camera_info', 10)
+        self.depth_info_pub = self.create_publisher(CameraInfo, '/camera/depth/camera_info', 10)
+        self.color_sub = self.create_subscription(
+        self.depth_sub = self.create_subscription(
+        self.stitching_complete_sub = self.create_subscription(
+        self.reference_image_sub = self.create_subscription(
+        self.reference_depth_sub = self.create_subscription(
+        self.detection_result_pub = self.create_publisher(
+        self.visualization_pub = self.create_publisher(
+        self.trigger_sub = self.create_subscription(
+        self.stitching_complete_sub = self.create_subscription(
+        self.reference_image_sub = self.create_subscription(
+        self.reference_depth_sub = self.create_subscription(
+        self.detection_result_pub = self.create_publisher(
+        self.visualization_pub = self.create_publisher(
+        self.current_pose_sub = self.create_subscription(
+        self.color_image_sub = self.create_subscription(
+        self.depth_image_sub = self.create_subscription(
+        self.detection_complete_sub = self.create_subscription(
+        self.target_pose_pub = self.create_publisher(
+        self.gripper_target_pub = self.create_publisher(
+        self.status_pub = self.create_publisher(
+        self.visualization_pub = self.create_publisher(
+        self.current_pose_sub = self.create_subscription(
+        self.color_image_sub = self.create_subscription(
+        self.depth_image_sub = self.create_subscription(
+        self.target_pose_pub = self.create_publisher(
+        self.stitching_complete_sub = self.create_subscription(
+        self.reference_image_sub = self.create_subscription(
+        self.reference_depth_sub = self.create_subscription(
+        self.detection_result_pub = self.create_publisher(
+        self.detection_complete_pub = self.create_publisher(
+        self.visualization_pub = self.create_publisher(
+        self.target_pose_pub = self.create_publisher(PoseStamped, '/xarm/target_pose', 10)
+        self.gripper_control_pub = self.create_publisher(Int32, '/xarm/gripper_target', 10)
+        self.detection_complete_sub = self.create_subscription(
+        self.color_image_sub = self.create_subscription(
+        self.detection_result_sub = self.create_subscription(
+        self.detection_complete_sub = self.create_subscription(
+        self.visualization_sub = self.create_subscription(
+    trigger_pub = node.create_publisher(String, '/stitching_complete', 10)
+        self.stitching_complete_pub = self.create_publisher(
+        self.reference_image_pub = self.create_publisher(
+        self.reference_depth_pub = self.create_publisher(
+
+🚀 Launch文件:
+=============
+
+⚙️ 配置文件:
+============
+./src/vision_ai/models/sam2/sam2_hiera_b_plus.yaml
+./src/vision_ai/models/sam2/sam2_hiera_l.yaml
+./src/vision_ai/static_grasp_config.yaml
+./src/vision_ai/vision_ai/config/model_configs/default_config.yaml
+./src/vision_ai/vision_ai/config/model_configs/detection_config.yaml
+./src/vision_ai/vision_ai/tracking_system/utils/config.py
+
+🔧 构建文件:
+============
+./install/xarm_controller/share/xarm_controller/package.xml
+./install/vision_ai_interfaces/share/vision_ai_interfaces/package.xml
+./install/camera_node/share/camera_node/package.xml
+./build/vision_ai_interfaces/vision_ai_interfaces__py/CMakeLists.txt
+./src/xarm_controller/package.xml
+./src/vision_ai_interfaces/CMakeLists.txt
+./src/vision_ai_interfaces/package.xml
+./src/camera_node/package.xml
+./src/vision_ai/package.xml
+
+🏗️ 工作空间结构:
+================
+总计 188
+drwxrwxr-x 28 qi qi  4096 Jul 16 19:25 .
+drwxr-x--- 44 qi qi  4096 Jul 17 14:05 ..
+drwxrwxr-x  5 qi qi  4096 Jul 16 19:25 build
+-rwxrwxr-x  1 qi qi   186 Jun 25 18:21 build_interfaces.sh
+-rw-rw-r--  1 qi qi  2561 Jul 12 15:17 check.sh
+-rwxrwxr-x  1 qi qi   741 Jul  9 16:24 clean.sh
+-rw-rw-r--  1 qi qi  6576 Jul 15 20:50 des.txt
+-rw-rw-r--  1 qi qi  3211 Jul  9 16:25 detection_monitor.sh
+drwxrwxr-x  2 qi qi  4096 Jul 16 17:13 detection_output_20250716_171338
+drwxrwxr-x  2 qi qi  4096 Jul 16 17:35 detection_output_20250716_173550
+drwxrwxr-x  2 qi qi  4096 Jul 16 17:41 detection_output_20250716_174105
+drwxrwxr-x  2 qi qi  4096 Jul 16 17:57 detection_output_20250716_175710
+drwxrwxr-x  2 qi qi  4096 Jul 16 17:59 detection_output_20250716_175958
+drwxrwxr-x  2 qi qi  4096 Jul 16 18:33 detection_output_20250716_183312
+drwxrwxr-x  2 qi qi  4096 Jul 16 18:36 detection_output_20250716_183624
+drwxrwxr-x  2 qi qi  4096 Jul 16 18:48 detection_output_20250716_184846
+drwxrwxr-x  2 qi qi  4096 Jul 16 18:55 detection_output_20250716_185510
+drwxrwxr-x  2 qi qi  4096 Jul 16 19:04 detection_output_20250716_190421
+drwxrwxr-x  2 qi qi  4096 Jul 16 19:19 detection_output_20250716_191910
+drwxrwxr-x  2 qi qi  4096 Jul 16 19:23 detection_output_20250716_192307
+-rwxrwxr-x  1 qi qi  5022 Jul 15 19:57 dev.sh
+drwxrwxr-x  8 qi qi  4096 Jul 15 20:39 .git
+-rw-rw-r--  1 qi qi   561 Jul 15 20:31 .gitignore
+drwxrwxr-x  5 qi qi  4096 Jul 16 19:25 install
+-rwxrwxr-x  1 qi qi  8867 Jul 16 16:43 integrated_launch.sh
+-rw-rw-r--  1 qi qi    14 Jul 15 20:38 README.md
+-rwxrwxr-x  1 qi qi  4221 Jul 16 16:19 restart.sh
+-rw-rw-r--  1 qi qi   598 Jul 15 20:21 run_detection_node.sh
+drwxrwxr-x  3 qi qi  4096 Jul 16 17:57 scan_output_20250716_175720
+drwxrwxr-x  3 qi qi  4096 Jul 16 18:00 scan_output_20250716_180018
+drwxrwxr-x  3 qi qi  4096 Jul 16 18:33 scan_output_20250716_183322
+drwxrwxr-x  3 qi qi  4096 Jul 16 18:36 scan_output_20250716_183632
+drwxrwxr-x  3 qi qi  4096 Jul 16 18:49 scan_output_20250716_184902
+drwxrwxr-x  3 qi qi  4096 Jul 16 18:55 scan_output_20250716_185525
+drwxrwxr-x  3 qi qi  4096 Jul 16 19:04 scan_output_20250716_190432
+drwxrwxr-x  3 qi qi  4096 Jul 16 19:19 scan_output_20250716_191915
+drwxrwxr-x  3 qi qi  4096 Jul 16 19:23 scan_output_20250716_192322
+drwxrwxr-x  6 qi qi  4096 Jun 25 19:25 src
+-rw-rw-r--  1 qi qi 10391 Jul 15 17:07 tracking_prompt.txt
+drwxrwxr-x  2 qi qi  4096 Jul  7 16:10 .vscode
+
+📂 src目录结构:
+==============
+src
+src/xarm_controller
+src/xarm_controller/xarm_controller
+src/xarm_controller/test
+src/xarm_controller/resource
+src/vision_ai_interfaces
+src/vision_ai_interfaces/srv
+src/vision_ai_interfaces/msg
+src/camera_node
+src/camera_node/test
+src/camera_node/camera_node
+src/camera_node/resource
+src/vision_ai
+src/vision_ai/models
+src/vision_ai/models/sam2
+src/vision_ai/test
+src/vision_ai/scripts
+src/vision_ai/vision_ai
+src/vision_ai/vision_ai/__pycache__
+src/vision_ai/vision_ai/config
+
+=== 附加信息查询 ===
+
+🐍 Python导入信息:
+==================
+from geometry_msgs.msg import Point
+from geometry_msgs.msg import Point, Pose, Quaternion
+from geometry_msgs.msg import Pose, Point, Quaternion, PoseStamped
+from geometry_msgs.msg import PoseStamped
+from geometry_msgs.msg import PoseStamped, Point, Quaternion
+from geometry_msgs.msg import TransformStamped
+from rclpy.node import Node
+from rclpy.service import Service
+from sensor_msgs.msg import Image
+from sensor_msgs.msg import Image, CameraInfo
+
+🔧 服务和动作:
+=============
+        self.enable_srv = self.create_service(SetBool, '/xarm/enable', self.enable_callback)
+        self.go_home_srv = self.create_service(Trigger, '/xarm/go_home', self.go_home_callback)
+        self.emergency_stop_srv = self.create_service(Trigger, '/xarm/emergency_stop', self.emergency_stop_callback)
+        self.gripper_open_srv = self.create_service(Trigger, '/xarm/gripper_open', self.gripper_open_callback)
+        self.gripper_close_srv = self.create_service(Trigger, '/xarm/gripper_close', self.gripper_close_callback)
+        self.gripper_partial_srv = self.create_service(Trigger, '/xarm/gripper_partial_open', self.gripper_partial_callback)
+        self.enable_srv = self.create_service(SetBool, '/xarm/enable', self.enable_callback)
+        self.go_home_srv = self.create_service(Trigger, '/xarm/go_home', self.go_home_callback)
+        self.emergency_stop_srv = self.create_service(Trigger, '/xarm/emergency_stop', self.emergency_stop_callback)
+        self.gripper_open_srv = self.create_service(Trigger, '/xarm/gripper_open', self.gripper_open_callback)
+        self.gripper_close_srv = self.create_service(Trigger, '/xarm/gripper_close', self.gripper_close_callback)
+        self.gripper_partial_srv = self.create_service(Trigger, '/xarm/gripper_partial_open', self.gripper_partial_callback)
+        self.enable_srv = self.create_service(SetBool, '/xarm/enable', self.enable_callback)
+        self.go_home_srv = self.create_service(Trigger, '/xarm/go_home', self.go_home_callback)
+        self.emergency_stop_srv = self.create_service(Trigger, '/xarm/emergency_stop', self.emergency_stop_callback)
+        self.gripper_open_srv = self.create_service(Trigger, '/xarm/gripper_open', self.gripper_open_callback)
+        self.gripper_close_srv = self.create_service(Trigger, '/xarm/gripper_close', self.gripper_close_callback)
+        self.gripper_partial_srv = self.create_service(Trigger, '/xarm/gripper_partial_open', self.gripper_partial_callback)
+        self.execute_service = self.create_service(
+        self.arm_enable_client = self.create_client(
+            stitch_client = self.create_client(ProcessStitching, 'process_stitching')
+        self.gripper_open_client = self.create_client(Trigger, '/xarm/gripper_open')
+        self.gripper_close_client = self.create_client(Trigger, '/xarm/gripper_close')
+        self.go_home_client = self.create_client(Trigger, '/xarm/go_home')
+        self.plan_client = self.create_client(PlanScan, 'plan_scan')
+                self.execute_client = self.create_client(ExecuteScan, 'execute_scan')
+        self.plan_service = self.create_service(
+        self.stitch_service = self.create_service(

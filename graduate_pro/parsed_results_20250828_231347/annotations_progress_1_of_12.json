@@ -1,0 +1,12 @@
+[
+  {
+    "scenario_id": "scan_output_20250828_211017",
+    "annotation": {
+      "scene_quality": 5,
+      "detection_accuracy": 5,
+      "feature_quality_accuracy": 5,
+      "notes": "",
+      "annotation_timestamp": "2025-08-28T23:14:43.604207"
+    }
+  }
+]

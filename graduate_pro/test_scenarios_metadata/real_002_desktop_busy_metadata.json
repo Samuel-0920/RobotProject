@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_002_desktop_busy",
+  "complexity_level": 4,
+  "lighting_condition": "normal",
+  "object_count": 5,
+  "interference_objects": 2,
+  "occlusion_level": 0.3,
+  "scene_type": "desktop_clutter",
+  "notes": "Busy desktop environment with many overlapping objects"
+}

@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_001_desktop_simple",
+  "complexity_level": 2,
+  "lighting_condition": "normal",
+  "object_count": 3,
+  "interference_objects": 1,
+  "occlusion_level": 0.1,
+  "scene_type": "desktop_clutter",
+  "notes": "Typical office desktop with papers, pens, and target objects"
+}

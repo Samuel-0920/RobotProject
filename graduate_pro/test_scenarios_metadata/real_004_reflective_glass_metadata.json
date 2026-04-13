@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_004_reflective_glass",
+  "complexity_level": 4,
+  "lighting_condition": "bright",
+  "object_count": 3,
+  "interference_objects": 1,
+  "occlusion_level": 0.2,
+  "scene_type": "reflective_surfaces",
+  "notes": "Glass and plastic objects with challenging reflective properties"
+}

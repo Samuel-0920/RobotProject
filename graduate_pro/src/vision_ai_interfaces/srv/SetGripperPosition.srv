@@ -1,0 +1,6 @@
+# Request
+int32 position    # 夹爪位置 (0-850)
+---
+# Response
+bool success      # 操作是否成功
+string message    # 状态消息

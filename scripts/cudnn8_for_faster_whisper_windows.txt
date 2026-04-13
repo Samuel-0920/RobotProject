@@ -1,0 +1,37 @@
+Faster-Whisper / ctranslate2 在 Windows 上要的是 cuDNN 8 系列 DLL（例如 cudnn_ops_infer64_8.dll）。
+若 conda 环境里只有 cuDNN 9（只有 cudnn_ops64_9.dll 等），就会报 Error 126，GPU 无法用于 Whisper。
+
+────────────────────────────────────────
+一、先确认（PowerShell）
+────────────────────────────────────────
+dir C:\Users\10545\anaconda3\envs\g1_env\Library\bin\cudnn*.dll
+
+若看不到 cudnn_ops_infer64_8.dll，需要按下面换/装 cuDNN 8。
+
+────────────────────────────────────────
+二、推荐：在 g1_env 里换成 cuDNN 8.9（与 torch cu118 常见搭配）
+────────────────────────────────────────
+conda activate g1_env
+
+# 若已装 cudnn 9，先卸（有冲突时加 --force 或按提示处理依赖）
+conda remove cudnn -y
+
+# 安装 8.9 + 指定 CUDA 11.8 元数据（渠道以你机器为准，可先试 conda-forge）
+conda install -c conda-forge "cudnn=8.9.*" "cuda-version=11.8" -y
+
+装完再执行：
+dir ...\g1_env\Library\bin\cudnn_ops_infer64_8.dll
+应能看到该文件，再运行 embodied_command_hub.py。
+
+────────────────────────────────────────
+三、临时绕过：强制 CPU（不装 cuDNN 也能用）
+────────────────────────────────────────
+$env:EMBODIED_WHISPER_FORCE_CPU="1"
+python embodied_command_hub.py
+
+或在界面里把「设备」改成 cpu 并点「应用」。
+
+────────────────────────────────────────
+四、说明
+────────────────────────────────────────
+代码已把 g1_env\Library\bin 加到 PATH 并 add_dll_directory；缺的是「正确大版本」的 DLL，必须环境里有 cuDNN 8 命名那套文件。

@@ -1,0 +1,275 @@
+{
+  "total_scenarios": 24,
+  "controlled_scenarios": 12,
+  "real_cluttered_scenarios": 12,
+  "complexity_distribution": {
+    "level_1": 1,
+    "level_2": 4,
+    "level_3": 8,
+    "level_4": 8,
+    "level_5": 3
+  },
+  "lighting_distribution": {
+    "normal": 14,
+    "dim": 4,
+    "bright": 3,
+    "backlit": 3
+  },
+  "scene_types": [
+    "reflective_surfaces",
+    "controlled_multi",
+    "desktop_clutter",
+    "angle_variation",
+    "controlled_combined",
+    "mixed_materials",
+    "distance_variation",
+    "kitchen_environment",
+    "patterned_background",
+    "controlled_challenging",
+    "controlled_interference",
+    "controlled_occlusion",
+    "controlled_simple"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "controlled_001_normal_single",
+      "complexity_level": 1,
+      "lighting_condition": "normal",
+      "object_count": 1,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_simple",
+      "notes": "Single target object under normal lighting, clean background"
+    },
+    {
+      "scenario_id": "controlled_002_normal_multi",
+      "complexity_level": 2,
+      "lighting_condition": "normal",
+      "object_count": 4,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_multi",
+      "notes": "Multiple target objects under normal lighting, well separated"
+    },
+    {
+      "scenario_id": "controlled_003_dim_single",
+      "complexity_level": 2,
+      "lighting_condition": "dim",
+      "object_count": 1,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_simple",
+      "notes": "Single target object under dim lighting conditions"
+    },
+    {
+      "scenario_id": "controlled_004_dim_multi",
+      "complexity_level": 3,
+      "lighting_condition": "dim",
+      "object_count": 4,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_multi",
+      "notes": "Multiple target objects under dim lighting, increased difficulty"
+    },
+    {
+      "scenario_id": "controlled_005_backlit_single",
+      "complexity_level": 3,
+      "lighting_condition": "backlit",
+      "object_count": 1,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_challenging",
+      "notes": "Single target with strong backlight creating silhouettes"
+    },
+    {
+      "scenario_id": "controlled_006_backlit_multi",
+      "complexity_level": 4,
+      "lighting_condition": "backlit",
+      "object_count": 3,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_challenging",
+      "notes": "Multiple targets with challenging backlight conditions"
+    },
+    {
+      "scenario_id": "controlled_007_interference_single",
+      "complexity_level": 3,
+      "lighting_condition": "normal",
+      "object_count": 1,
+      "interference_objects": 1,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_interference",
+      "notes": "Single target with one similar-looking interference object"
+    },
+    {
+      "scenario_id": "controlled_008_interference_multi",
+      "complexity_level": 4,
+      "lighting_condition": "normal",
+      "object_count": 3,
+      "interference_objects": 3,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_interference",
+      "notes": "Multiple targets with multiple interference objects of similar appearance"
+    },
+    {
+      "scenario_id": "controlled_009_occlusion_light",
+      "complexity_level": 3,
+      "lighting_condition": "normal",
+      "object_count": 2,
+      "interference_objects": 0,
+      "occlusion_level": 0.3,
+      "scene_type": "controlled_occlusion",
+      "notes": "Targets with 30% occlusion using transparent/semi-transparent materials"
+    },
+    {
+      "scenario_id": "controlled_010_occlusion_moderate",
+      "complexity_level": 4,
+      "lighting_condition": "normal",
+      "object_count": 3,
+      "interference_objects": 0,
+      "occlusion_level": 0.5,
+      "scene_type": "controlled_occlusion",
+      "notes": "Multiple targets with moderate occlusion (50%) using opaque blockers"
+    },
+    {
+      "scenario_id": "controlled_011_dim_interference",
+      "complexity_level": 4,
+      "lighting_condition": "dim",
+      "object_count": 2,
+      "interference_objects": 2,
+      "occlusion_level": 0.0,
+      "scene_type": "controlled_combined",
+      "notes": "Dim lighting combined with interference objects"
+    },
+    {
+      "scenario_id": "controlled_012_backlit_occlusion",
+      "complexity_level": 5,
+      "lighting_condition": "backlit",
+      "object_count": 2,
+      "interference_objects": 0,
+      "occlusion_level": 0.3,
+      "scene_type": "controlled_combined",
+      "notes": "Most challenging: backlight with partial occlusion"
+    },
+    {
+      "scenario_id": "real_001_desktop_simple",
+      "complexity_level": 2,
+      "lighting_condition": "normal",
+      "object_count": 3,
+      "interference_objects": 1,
+      "occlusion_level": 0.1,
+      "scene_type": "desktop_clutter",
+      "notes": "Typical office desktop with papers, pens, and target objects"
+    },
+    {
+      "scenario_id": "real_002_desktop_busy",
+      "complexity_level": 4,
+      "lighting_condition": "normal",
+      "object_count": 5,
+      "interference_objects": 3,
+      "occlusion_level": 0.3,
+      "scene_type": "desktop_clutter",
+      "notes": "Busy desktop environment with many overlapping objects"
+    },
+    {
+      "scenario_id": "real_003_reflective_metal",
+      "complexity_level": 3,
+      "lighting_condition": "bright",
+      "object_count": 2,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "reflective_surfaces",
+      "notes": "Metallic objects creating reflections and specular highlights"
+    },
+    {
+      "scenario_id": "real_004_reflective_glass",
+      "complexity_level": 4,
+      "lighting_condition": "bright",
+      "object_count": 3,
+      "interference_objects": 1,
+      "occlusion_level": 0.2,
+      "scene_type": "reflective_surfaces",
+      "notes": "Glass and plastic objects with challenging reflective properties"
+    },
+    {
+      "scenario_id": "real_005_patterned_fabric",
+      "complexity_level": 3,
+      "lighting_condition": "normal",
+      "object_count": 4,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "patterned_background",
+      "notes": "Objects placed on patterned fabric or textured surfaces"
+    },
+    {
+      "scenario_id": "real_006_patterned_complex",
+      "complexity_level": 5,
+      "lighting_condition": "normal",
+      "object_count": 3,
+      "interference_objects": 2,
+      "occlusion_level": 0.4,
+      "scene_type": "patterned_background",
+      "notes": "Complex patterns with camouflaging effects on target detection"
+    },
+    {
+      "scenario_id": "real_007_distance_close",
+      "complexity_level": 2,
+      "lighting_condition": "normal",
+      "object_count": 2,
+      "interference_objects": 0,
+      "occlusion_level": 0.0,
+      "scene_type": "distance_variation",
+      "notes": "Close-up view (< 30cm) with high detail but potential distortion"
+    },
+    {
+      "scenario_id": "real_008_distance_far",
+      "complexity_level": 3,
+      "lighting_condition": "normal",
+      "object_count": 4,
+      "interference_objects": 1,
+      "occlusion_level": 0.0,
+      "scene_type": "distance_variation",
+      "notes": "Far view (> 60cm) with multiple small objects"
+    },
+    {
+      "scenario_id": "real_009_angle_oblique",
+      "complexity_level": 3,
+      "lighting_condition": "normal",
+      "object_count": 3,
+      "interference_objects": 1,
+      "occlusion_level": 0.2,
+      "scene_type": "angle_variation",
+      "notes": "Oblique viewing angle (45 degrees) creating perspective challenges"
+    },
+    {
+      "scenario_id": "real_010_angle_extreme",
+      "complexity_level": 4,
+      "lighting_condition": "dim",
+      "object_count": 2,
+      "interference_objects": 0,
+      "occlusion_level": 0.1,
+      "scene_type": "angle_variation",
+      "notes": "Extreme viewing angle with dim lighting combination"
+    },
+    {
+      "scenario_id": "real_011_mixed_textures",
+      "complexity_level": 4,
+      "lighting_condition": "normal",
+      "object_count": 5,
+      "interference_objects": 2,
+      "occlusion_level": 0.3,
+      "scene_type": "mixed_materials",
+      "notes": "Combination of different material types: plastic, metal, fabric, wood"
+    },
+    {
+      "scenario_id": "real_012_kitchen_scene",
+      "complexity_level": 5,
+      "lighting_condition": "bright",
+      "object_count": 4,
+      "interference_objects": 3,
+      "occlusion_level": 0.4,
+      "scene_type": "kitchen_environment",
+      "notes": "Real kitchen counter with utensils, containers, and food items"
+    }
+  ]
+}

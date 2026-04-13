@@ -1,0 +1,46 @@
+{
+  "generation_timestamp": "2025-08-29T00:10:28.194373",
+  "total_charts": 8,
+  "charts": [
+    {
+      "name": "detection_accuracy_by_complexity",
+      "file_path": "/home/qi/ros2_ws/fixed_results_20250829_000328/charts/detection_accuracy_by_complexity.png",
+      "file_name": "detection_accuracy_by_complexity.png"
+    },
+    {
+      "name": "lighting_condition_impact",
+      "file_path": "/home/qi/ros2_ws/fixed_results_20250829_000328/charts/lighting_condition_impact.png",
+      "file_name": "lighting_condition_impact.png"
+    },
+    {
+      "name": "3d_post_processing_effectiveness",
+      "file_path": "/home/qi/ros2_ws/fixed_results_20250829_000328/charts/3d_post_processing_effectiveness.png",
+      "file_name": "3d_post_processing_effectiveness.png"
+    },
+    {
+      "name": "feature_quality_correlation",
+      "file_path": "/home/qi/ros2_ws/fixed_results_20250829_000328/charts/feature_quality_correlation.png",
+      "file_name": "feature_quality_correlation.png"
+    },
+    {
+      "name": "processing_time_breakdown",
+      "file_path": "/home/qi/ros2_ws/fixed_results_20250829_000328/charts/processing_time_breakdown.png",
+      "file_name": "processing_time_breakdown.png"
+    },
+    {
+      "name": "error_analysis",
+      "file_path": "/home/qi/ros2_ws/fixed_results_20250829_000328/charts/error_analysis.png",
+      "file_name": "error_analysis.png"
+    },
+    {
+      "name": "detection_consistency",
+      "file_path": "/home/qi/ros2_ws/fixed_results_20250829_000328/charts/detection_consistency.png",
+      "file_name": "detection_consistency.png"
+    },
+    {
+      "name": "performance_overview",
+      "file_path": "/home/qi/ros2_ws/fixed_results_20250829_000328/charts/performance_overview.png",
+      "file_name": "performance_overview.png"
+    }
+  ]
+}

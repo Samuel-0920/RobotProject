@@ -1,0 +1,31 @@
+{
+  "generation_timestamp": "2025-08-28T23:47:57.501687",
+  "total_charts": 5,
+  "charts": [
+    {
+      "name": "detection_accuracy_by_complexity",
+      "file_path": "test_results/charts/detection_accuracy_by_complexity.png",
+      "file_name": "detection_accuracy_by_complexity.png"
+    },
+    {
+      "name": "lighting_condition_impact",
+      "file_path": "test_results/charts/lighting_condition_impact.png",
+      "file_name": "lighting_condition_impact.png"
+    },
+    {
+      "name": "3d_post_processing_effectiveness",
+      "file_path": "test_results/charts/3d_post_processing_effectiveness.png",
+      "file_name": "3d_post_processing_effectiveness.png"
+    },
+    {
+      "name": "feature_quality_correlation",
+      "file_path": "test_results/charts/feature_quality_correlation.png",
+      "file_name": "feature_quality_correlation.png"
+    },
+    {
+      "name": "processing_time_breakdown",
+      "file_path": "test_results/charts/processing_time_breakdown.png",
+      "file_name": "processing_time_breakdown.png"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# 请求：图像处理
+sensor_msgs/Image image
+string process_type  # "detection", "tracking", etc.
+
+---
+
+# 响应：处理结果
+bool success
+string message
+DetectionResult[] detections

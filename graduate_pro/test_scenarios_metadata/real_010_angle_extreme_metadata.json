@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_010_angle_extreme",
+  "complexity_level": 4,
+  "lighting_condition": "dim",
+  "object_count": 2,
+  "interference_objects": 0,
+  "occlusion_level": 0.1,
+  "scene_type": "angle_variation",
+  "notes": "Extreme viewing angle with dim lighting combination"
+}

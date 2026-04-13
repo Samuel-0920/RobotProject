@@ -1,0 +1,368 @@
+{
+  "test_session": {
+    "timestamp": "2025-08-25 18:50:50",
+    "total_tests": 5,
+    "passed_tests": 3,
+    "failed_tests": 2
+  },
+  "test_results": [
+    {
+      "test_name": "小正方形区域 (预期单点扫描)",
+      "timestamp": "2025-08-25 18:50:39",
+      "success": true,
+      "phases": {
+        "planning": {
+          "success": true,
+          "scan_plan": "vision_ai_interfaces.msg.ScanPlan(strategy='single_point', scan_height=400.0, required_height=400.0, waypoints=[vision_ai_interfaces.msg.Waypoint(pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=250.0, y=-25.0, z=400.0), orientation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)), waypoint_index=0, coverage_rect=[], grid_position=vision_ai_interfaces.msg.GridPosition(grid_x=0, grid_y=0, total_x=0, total_y=0), relative_position=vision_ai_interfaces.msg.RelativePosition(camera_x=0.0, camera_y=0.0, neighbors=[]), overlap_x_ratio=0.0, overlap_y_ratio=0.0)], scan_region=[geometry_msgs.msg.Point(x=150.0, y=-150.0, z=0.0), geometry_msgs.msg.Point(x=150.0, y=100.0, z=0.0), geometry_msgs.msg.Point(x=350.0, y=100.0, z=0.0), geometry_msgs.msg.Point(x=350.0, y=-150.0, z=0.0)], object_height=50.0, mode='preset', overlap_ratio=0.25)",
+          "strategy": "single_point",
+          "waypoint_count": 1,
+          "scan_height": 400.0,
+          "object_height": 50.0,
+          "calculation_time_ms": 194.06,
+          "message": "Enhanced planning success: single_point strategy, 1 waypoints with positioning data"
+        },
+        "execution": {
+          "success": true,
+          "waypoint_count": 1,
+          "waypoints_executed": [
+            {
+              "waypoint_index": 0,
+              "target_position": [
+                250.0,
+                -25.0,
+                400.0
+              ],
+              "estimated_movement_time": 3.0,
+              "estimated_capture_time": 1.0,
+              "simulated_success": true
+            }
+          ],
+          "total_estimated_time": 4.0
+        },
+        "stitching": {
+          "success": true,
+          "message": "单点扫描无需拼接"
+        }
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "check": "策略验证",
+            "expected": "single_point",
+            "actual": "single_point",
+            "passed": true
+          },
+          {
+            "check": "航点数量验证",
+            "expected": 1,
+            "actual": 1,
+            "passed": true
+          },
+          {
+            "check": "扫描高度合理性",
+            "expected": "350-550mm有效高度",
+            "actual": "350.0mm",
+            "passed": true
+          }
+        ]
+      },
+      "total_time": 0.19646239280700684
+    },
+    {
+      "test_name": "中等矩形区域 (预期多点扫描)",
+      "timestamp": "2025-08-25 18:50:41",
+      "success": false,
+      "phases": {
+        "planning": {
+          "success": true,
+          "scan_plan": "vision_ai_interfaces.msg.ScanPlan(strategy='single_point', scan_height=416.6525641547309, required_height=416.6525641547309, waypoints=[vision_ai_interfaces.msg.Waypoint(pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=-7.5, y=-245.0, z=416.6525641547309), orientation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=-0.7071067811865475, w=0.7071067811865476)), waypoint_index=0, coverage_rect=[], grid_position=vision_ai_interfaces.msg.GridPosition(grid_x=0, grid_y=0, total_x=0, total_y=0), relative_position=vision_ai_interfaces.msg.RelativePosition(camera_x=0.0, camera_y=0.0, neighbors=[]), overlap_x_ratio=0.0, overlap_y_ratio=0.0)], scan_region=[geometry_msgs.msg.Point(x=-250.0, y=-390.0, z=0.0), geometry_msgs.msg.Point(x=-250.0, y=-100.0, z=0.0), geometry_msgs.msg.Point(x=235.0, y=-100.0, z=0.0), geometry_msgs.msg.Point(x=235.0, y=-390.0, z=0.0)], object_height=50.0, mode='preset', overlap_ratio=0.25)",
+          "strategy": "single_point",
+          "waypoint_count": 1,
+          "scan_height": 416.6525641547309,
+          "object_height": 50.0,
+          "calculation_time_ms": 15.59,
+          "message": "Enhanced planning success: single_point strategy, 1 waypoints with positioning data"
+        },
+        "execution": {
+          "success": true,
+          "waypoint_count": 1,
+          "waypoints_executed": [
+            {
+              "waypoint_index": 0,
+              "target_position": [
+                -7.5,
+                -245.0,
+                416.6525641547309
+              ],
+              "estimated_movement_time": 3.0,
+              "estimated_capture_time": 1.0,
+              "simulated_success": true
+            }
+          ],
+          "total_estimated_time": 4.0
+        },
+        "stitching": {
+          "success": true,
+          "message": "单点扫描无需拼接"
+        }
+      },
+      "validation": {
+        "passed": false,
+        "checks": [
+          {
+            "check": "策略验证",
+            "expected": "multi_point",
+            "actual": "single_point",
+            "passed": false
+          },
+          {
+            "check": "航点数量验证",
+            "expected": "4-9",
+            "actual": 1,
+            "passed": false
+          },
+          {
+            "check": "扫描高度合理性",
+            "expected": "350-550mm有效高度",
+            "actual": "366.7mm",
+            "passed": true
+          }
+        ]
+      },
+      "total_time": 0.017859458923339844
+    },
+    {
+      "test_name": "大矩形区域 (预期多点扫描)",
+      "timestamp": "2025-08-25 18:50:43",
+      "success": false,
+      "phases": {
+        "planning": {
+          "success": true,
+          "scan_plan": "vision_ai_interfaces.msg.ScanPlan(strategy='multi_point', scan_height=430.0, required_height=600.0, waypoints=[vision_ai_interfaces.msg.Waypoint(pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=238.6653864099888, y=-115.83455193311914, z=430.0), orientation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=-0.6754104680342783, w=0.7374419974952044)), waypoint_index=0, coverage_rect=[], grid_position=vision_ai_interfaces.msg.GridPosition(grid_x=0, grid_y=0, total_x=3, total_y=1), relative_position=vision_ai_interfaces.msg.RelativePosition(camera_x=-270.5013122558594, camera_y=0.0, neighbors=['right']), overlap_x_ratio=0.10000000149011612, overlap_y_ratio=0.0), vision_ai_interfaces.msg.Waypoint(pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=262.3725, y=-385.295, z=430.0), orientation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=-0.6754104680342783, w=0.7374419974952044)), waypoint_index=1, coverage_rect=[], grid_position=vision_ai_interfaces.msg.GridPosition(grid_x=1, grid_y=0, total_x=3, total_y=1), relative_position=vision_ai_interfaces.msg.RelativePosition(camera_x=0.0, camera_y=0.0, neighbors=['left', 'right']), overlap_x_ratio=0.10000000149011612, overlap_y_ratio=0.0), vision_ai_interfaces.msg.Waypoint(pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=286.0796135900112, y=-654.755448066881, z=430.0), orientation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=-0.6754104680342783, w=0.7374419974952044)), waypoint_index=2, coverage_rect=[], grid_position=vision_ai_interfaces.msg.GridPosition(grid_x=2, grid_y=0, total_x=3, total_y=1), relative_position=vision_ai_interfaces.msg.RelativePosition(camera_x=270.5013122558594, camera_y=0.0, neighbors=['left']), overlap_x_ratio=0.10000000149011612, overlap_y_ratio=0.0)], scan_region=[geometry_msgs.msg.Point(x=437.97, y=-94.11, z=0.0), geometry_msgs.msg.Point(x=39.45, y=-128.52, z=0.0), geometry_msgs.msg.Point(x=86.78, y=-676.48, z=0.0), geometry_msgs.msg.Point(x=485.29, y=-642.07, z=0.0)], object_height=50.0, mode='preset', overlap_ratio=0.1)",
+          "strategy": "multi_point",
+          "waypoint_count": 3,
+          "scan_height": 430.0,
+          "object_height": 50.0,
+          "calculation_time_ms": 24.16,
+          "message": "Enhanced planning success: multi_point strategy, 3 waypoints with positioning data"
+        },
+        "execution": {
+          "success": true,
+          "waypoint_count": 3,
+          "waypoints_executed": [
+            {
+              "waypoint_index": 0,
+              "target_position": [
+                238.6653864099888,
+                -115.83455193311914,
+                430.0
+              ],
+              "estimated_movement_time": 3.0,
+              "estimated_capture_time": 1.0,
+              "simulated_success": true
+            },
+            {
+              "waypoint_index": 1,
+              "target_position": [
+                262.3725,
+                -385.295,
+                430.0
+              ],
+              "estimated_movement_time": 3.5,
+              "estimated_capture_time": 1.0,
+              "simulated_success": true
+            },
+            {
+              "waypoint_index": 2,
+              "target_position": [
+                286.0796135900112,
+                -654.755448066881,
+                430.0
+              ],
+              "estimated_movement_time": 4.0,
+              "estimated_capture_time": 1.0,
+              "simulated_success": true
+            }
+          ],
+          "total_estimated_time": 13.5
+        },
+        "stitching": {
+          "success": true,
+          "complexity": "简单",
+          "input_images": 3,
+          "estimated_processing_time": 5.0,
+          "estimated_output_resolution": [
+            2560,
+            1440
+          ],
+          "message": "预计拼接 3 张图像，复杂度: 简单"
+        }
+      },
+      "validation": {
+        "passed": false,
+        "checks": [
+          {
+            "check": "策略验证",
+            "expected": "multi_point",
+            "actual": "multi_point",
+            "passed": true
+          },
+          {
+            "check": "航点数量验证",
+            "expected": "6-12",
+            "actual": 3,
+            "passed": false
+          },
+          {
+            "check": "扫描高度合理性",
+            "expected": "350-550mm有效高度",
+            "actual": "380.0mm",
+            "passed": true
+          }
+        ]
+      },
+      "total_time": 0.026662826538085938
+    },
+    {
+      "test_name": "高物体测试 (100mm)",
+      "timestamp": "2025-08-25 18:50:45",
+      "success": true,
+      "phases": {
+        "planning": {
+          "success": true,
+          "scan_plan": "vision_ai_interfaces.msg.ScanPlan(strategy='single_point', scan_height=450.0, required_height=450.0, waypoints=[vision_ai_interfaces.msg.Waypoint(pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=200.0, y=200.0, z=450.0), orientation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)), waypoint_index=0, coverage_rect=[], grid_position=vision_ai_interfaces.msg.GridPosition(grid_x=0, grid_y=0, total_x=0, total_y=0), relative_position=vision_ai_interfaces.msg.RelativePosition(camera_x=0.0, camera_y=0.0, neighbors=[]), overlap_x_ratio=0.0, overlap_y_ratio=0.0)], scan_region=[geometry_msgs.msg.Point(x=100.0, y=100.0, z=0.0), geometry_msgs.msg.Point(x=100.0, y=300.0, z=0.0), geometry_msgs.msg.Point(x=300.0, y=300.0, z=0.0), geometry_msgs.msg.Point(x=300.0, y=100.0, z=0.0)], object_height=100.0, mode='preset', overlap_ratio=0.25)",
+          "strategy": "single_point",
+          "waypoint_count": 1,
+          "scan_height": 450.0,
+          "object_height": 100.0,
+          "calculation_time_ms": 14.93,
+          "message": "Enhanced planning success: single_point strategy, 1 waypoints with positioning data"
+        },
+        "execution": {
+          "success": true,
+          "waypoint_count": 1,
+          "waypoints_executed": [
+            {
+              "waypoint_index": 0,
+              "target_position": [
+                200.0,
+                200.0,
+                450.0
+              ],
+              "estimated_movement_time": 3.0,
+              "estimated_capture_time": 1.0,
+              "simulated_success": true
+            }
+          ],
+          "total_estimated_time": 4.0
+        },
+        "stitching": {
+          "success": true,
+          "message": "单点扫描无需拼接"
+        }
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "check": "策略验证",
+            "expected": "single_point",
+            "actual": "single_point",
+            "passed": true
+          },
+          {
+            "check": "航点数量验证",
+            "expected": 1,
+            "actual": 1,
+            "passed": true
+          },
+          {
+            "check": "扫描高度合理性",
+            "expected": "350-550mm有效高度",
+            "actual": "350.0mm",
+            "passed": true
+          }
+        ]
+      },
+      "total_time": 0.01786661148071289
+    },
+    {
+      "test_name": "边界测试 (接近工作区域边界)",
+      "timestamp": "2025-08-25 18:50:48",
+      "success": true,
+      "phases": {
+        "planning": {
+          "success": true,
+          "scan_plan": "vision_ai_interfaces.msg.ScanPlan(strategy='single_point', scan_height=375.0, required_height=375.0, waypoints=[vision_ai_interfaces.msg.Waypoint(pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=675.0, y=100.0, z=375.0), orientation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)), waypoint_index=0, coverage_rect=[], grid_position=vision_ai_interfaces.msg.GridPosition(grid_x=0, grid_y=0, total_x=0, total_y=0), relative_position=vision_ai_interfaces.msg.RelativePosition(camera_x=0.0, camera_y=0.0, neighbors=[]), overlap_x_ratio=0.0, overlap_y_ratio=0.0)], scan_region=[geometry_msgs.msg.Point(x=600.0, y=0.0, z=0.0), geometry_msgs.msg.Point(x=600.0, y=200.0, z=0.0), geometry_msgs.msg.Point(x=750.0, y=200.0, z=0.0), geometry_msgs.msg.Point(x=750.0, y=0.0, z=0.0)], object_height=25.0, mode='preset', overlap_ratio=0.25)",
+          "strategy": "single_point",
+          "waypoint_count": 1,
+          "scan_height": 375.0,
+          "object_height": 25.0,
+          "calculation_time_ms": 14.73,
+          "message": "Enhanced planning success: single_point strategy, 1 waypoints with positioning data"
+        },
+        "execution": {
+          "success": true,
+          "waypoint_count": 1,
+          "waypoints_executed": [
+            {
+              "waypoint_index": 0,
+              "target_position": [
+                675.0,
+                100.0,
+                375.0
+              ],
+              "estimated_movement_time": 3.0,
+              "estimated_capture_time": 1.0,
+              "simulated_success": true
+            }
+          ],
+          "total_estimated_time": 4.0
+        },
+        "stitching": {
+          "success": true,
+          "message": "单点扫描无需拼接"
+        }
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "check": "策略验证",
+            "expected": "single_point",
+            "actual": "single_point",
+            "passed": true
+          },
+          {
+            "check": "航点数量验证",
+            "expected": 1,
+            "actual": 1,
+            "passed": true
+          },
+          {
+            "check": "扫描高度合理性",
+            "expected": "350-550mm有效高度",
+            "actual": "350.0mm",
+            "passed": true
+          }
+        ]
+      },
+      "total_time": 0.017055034637451172
+    }
+  ],
+  "summary": {
+    "planning_performance": {
+      "success_rate": 1.0,
+      "avg_calculation_time_ms": 52.694,
+      "max_calculation_time_ms": 194.06,
+      "min_calculation_time_ms": 14.73
+    },
+    "execution_simulation": {},
+    "validation_results": {
+      "total_checks": 15,
+      "passed_checks": 12,
+      "validation_pass_rate": 0.8
+    }
+  }
+}

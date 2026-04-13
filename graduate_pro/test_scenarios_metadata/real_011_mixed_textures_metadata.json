@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_011_mixed_textures",
+  "complexity_level": 4,
+  "lighting_condition": "normal",
+  "object_count": 5,
+  "interference_objects": 2,
+  "occlusion_level": 0.3,
+  "scene_type": "mixed_materials",
+  "notes": "Combination of different material types: plastic, metal, fabric, wood"
+}

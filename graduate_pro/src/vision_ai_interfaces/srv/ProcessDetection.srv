@@ -1,0 +1,6 @@
+# Request (empty for now)
+---
+# Response
+bool success
+string message
+DetectionResult result

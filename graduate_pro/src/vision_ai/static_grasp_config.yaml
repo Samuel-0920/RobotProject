@@ -1,0 +1,211 @@
+# static_grasp_config.yaml
+# ROS2静态抓取系统配置文件
+
+# 机械臂配置
+xarm:
+  ip_address: "192.168.1.117"
+  
+  # 工作空间限制 (mm)
+  workspace_limits:
+    x_min: -800
+    x_max: 800
+    y_min: -800
+    y_max: 800
+    z_min: 100
+    z_max: 800
+  
+  # 安全位置
+  safe_positions:
+    initial: [380, 0, 380, 180, 0, 0]  # [x, y, z, roll, pitch, yaw]
+    home: [200, 0, 250, 179, -20, 0]
+    placement: [300, -150, 300, 180, 0, 0]
+  
+  # 运动参数
+  motion:
+    default_speed: 50    # mm/s
+    approach_speed: 30   # mm/s
+    safe_height_offset: 100  # mm above target
+  
+  # 夹爪配置
+  gripper:
+    fully_open: 850
+    closed: 0
+    partial_open: 70
+    
+    # TCP负载参数
+    tcp_load:
+      empty_weight: 0.0      # kg
+      object_weight: 0.3     # kg (assumed)
+      center_of_gravity: [0, 0, 30]  # mm
+
+# 相机配置
+camera:
+  # RealSense配置
+  realsense:
+    color_resolution: [1280, 720]
+    depth_resolution: [848, 480]
+    fps: 30
+    
+  # 相机内参 (如果需要手动设置)
+  intrinsics:
+    fx: 912.7
+    fy: 910.3
+    cx: 640
+    cy: 360
+
+# 抓取策略配置
+grasp_strategy:
+  # 基于高度的策略选择
+  height_thresholds:
+    small_object: 60      # mm, 使用top_down
+    medium_object: 120    # mm, 使用side_middle
+    # large_object: >120mm, 使用side_bottom
+  
+  # 不同策略的参数
+  strategies:
+    top_down:
+      pitch: 0           # degrees
+      z_offset_factor: 0.3
+      z_offset_base: 25   # mm
+    
+    side_middle:
+      pitch: -25         # degrees
+      z_offset_factor: 0.5
+      z_offset_base: 0    # mm
+    
+    side_bottom:
+      pitch: -40         # degrees
+      z_offset_factor: 0.6
+      z_offset_base: 0    # mm
+  
+  # 默认参数（当detection信息不足时）
+  defaults:
+    height_mm: 30.0
+    yaw_deg: 0.0
+    approach: "top_down"
+
+# GUI配置
+gui:
+  # 窗口设置
+  window:
+    width: 1400
+    height: 900
+    title: "🎯 ROS2静态抓取系统"
+  
+  # 可视化设置
+  visualization:
+    workspace_color: "cyan"
+    target_color: "green"
+    selected_target_color: "yellow"
+    arm_color: "orange"
+    
+    # 3D图设置
+    plot_limits:
+      x: [-800, 800]
+      y: [-800, 800]
+    
+    # 图像显示设置
+    image_display:
+      max_width: 400
+      max_height: 300
+  
+  # 更新频率
+  update_rate: 10  # Hz
+
+# 系统行为配置
+behavior:
+  # 超时设置
+  timeouts:
+    motion_timeout: 10.0      # seconds
+    service_timeout: 5.0      # seconds
+    detection_timeout: 300.0  # seconds
+  
+  # 重试设置
+  retry:
+    max_motion_retries: 3
+    max_service_retries: 2
+  
+  # 安全设置
+  safety:
+    enable_collision_detection: true
+    min_grasp_height: 250     # mm
+    max_approach_force: 10.0  # N
+  
+  # 日志设置
+  logging:
+    level: "INFO"  # DEBUG, INFO, WARN, ERROR
+    save_to_file: true
+    log_directory: "/tmp/grasp_logs"
+
+# Detection接口配置
+detection:
+  # 等待detection完成的设置
+  wait_for_detection: true
+  auto_start_grasp: true
+  
+  # 必需的特征字段
+  required_features:
+    - "world_coordinates"
+    - "confidence"
+    - "class_name"
+  
+  # 可选的特征字段
+  optional_features:
+    - "height_mm"
+    - "orientation"
+    - "depth_info"
+  
+  # 过滤设置
+  filters:
+    min_confidence: 0.5
+    max_targets: 10
+    
+    # 工作空间过滤
+    filter_by_workspace: true
+
+# ROS2话题和服务配置
+ros2:
+  topics:
+    # 输入话题
+    detection_complete: "/detection_complete"
+    current_pose: "/xarm/current_pose"
+    color_image: "/camera/color/image_raw"
+    gripper_status: "/xarm/gripper_status"
+    arm_state: "/xarm/state"
+    
+    # 输出话题  
+    target_pose: "/xarm/target_pose"
+    gripper_control: "/xarm/gripper_target"
+  
+  services:
+    # 夹爪服务
+    gripper_open: "/xarm/gripper_open"
+    gripper_close: "/xarm/gripper_close"
+    gripper_partial: "/xarm/gripper_partial_open"
+    
+    # 机械臂服务
+    go_home: "/xarm/go_home"
+    enable_arm: "/xarm/enable"
+    emergency_stop: "/xarm/emergency_stop"
+  
+  # QoS设置
+  qos:
+    reliability: "reliable"  # reliable, best_effort
+    durability: "volatile"   # volatile, transient_local
+    history: "keep_last"
+    depth: 10
+
+# 调试和开发配置
+debug:
+  # 仿真模式（不连接真实硬件）
+  simulation_mode: false
+  
+  # 可视化调试
+  show_debug_info: true
+  save_debug_images: false
+  
+  # 性能监控
+  enable_performance_monitoring: true
+  
+  # 详细日志
+  verbose_logging: false

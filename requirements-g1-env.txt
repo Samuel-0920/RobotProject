@@ -1,0 +1,32 @@
+# Conda env: g1_env — 跑 graduate_pro 感知 (YOLOv8 + SAM2) + 根目录 perception_wrapper / test_end_to_end
+# pip install -r requirements-g1-env.txt
+
+# Core
+numpy>=1.23
+opencv-python>=4.8
+Pillow
+
+# YOLOv8 (Ultralytics)
+ultralytics>=8.3.0
+
+# PyTorch: 请按 CUDA 版本从 https://pytorch.org 安装，例如:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+torch>=2.1.0
+torchvision>=0.16.0
+
+# SAM2 (Segment Anything 2)
+git+https://github.com/facebookresearch/segment-anything-2.git
+
+# 3D 特征（FPFH 等，感知管线推荐）
+open3d>=0.18.0
+scikit-learn>=1.3.0
+scipy>=1.10.0
+
+# 配置解析（graduate_pro ConfigManager）
+PyYAML>=6.0
+
+# 端到端 FiLM 文本编码（LanguageFiLM.encode_texts）
+git+https://github.com/openai/CLIP.git
+
+# 可选：OpenAI VLM
+# openai>=1.0.0

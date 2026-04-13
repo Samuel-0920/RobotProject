@@ -1,0 +1,10 @@
+{
+  "scenario_id": "real_007_distance_close",
+  "complexity_level": 2,
+  "lighting_condition": "normal",
+  "object_count": 2,
+  "interference_objects": 0,
+  "occlusion_level": 0.0,
+  "scene_type": "distance_variation",
+  "notes": "Close-up view (< 30cm) with high detail but potential distortion"
+}

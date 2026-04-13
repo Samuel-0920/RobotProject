@@ -1,0 +1,198 @@
+{
+  "base_thresholds": {
+    "geometric": {
+      "fpfh": 0.85,
+      "pca": 0.75,
+      "bbox": 0.8,
+      "shape_context_3d": 0.78
+    },
+    "appearance": {
+      "histogram": 0.7,
+      "color_name": 1.0
+    },
+    "shape": {
+      "hu_moments": 0.75,
+      "shape_descriptors": 0.8,
+      "fourier": 0.72
+    },
+    "spatial": {
+      "position": 0.6,
+      "size": 0.7,
+      "distance": 0.65
+    }
+  },
+  "feature_weights": {
+    "geometric": 0.4,
+    "appearance": 0.2,
+    "shape": 0.3,
+    "spatial": 0.1
+  },
+  "learning_history": {
+    "successes": [],
+    "failures": [],
+    "adjustments": [
+      {
+        "timestamp": "2025-08-05T21:54:53.001799",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-05T22:10:15.719952",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-06T19:39:13.568597",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-06T19:56:16.008025",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-06T19:56:17.667015",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-06T20:13:03.458511",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-06T21:06:09.934266",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-06T21:28:37.913426",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-07T15:33:30.847761",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-07T15:33:31.467420",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-07T16:30:58.467316",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-09T16:14:02.422149",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-09T16:14:03.163994",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-09T17:38:38.030464",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-09T21:06:26.481648",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-09T21:06:26.658223",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-09T21:29:42.439319",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-11T20:44:08.088441",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-11T21:36:19.983767",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-11T21:56:59.624281",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-18T15:14:46.032692",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-31T22:51:23.388868",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-31T22:58:25.334060",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-31T23:07:40.318481",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-31T23:13:35.992681",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-31T23:13:36.896539",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-31T23:16:56.844022",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-31T23:22:43.340286",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-31T23:29:40.847022",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-08-31T23:33:22.373932",
+        "changes": {},
+        "total_samples": 0
+      },
+      {
+        "timestamp": "2025-09-12T17:10:26.090011",
+        "changes": {},
+        "total_samples": 0
+      }
+    ]
+  },
+  "performance_stats": {
+    "total_matches": 0,
+    "successful_matches": 0,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "last_update": "2025-08-05T21:49:26.851206"
+  }
+}
