@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 from typing import Any, Dict, List
@@ -111,6 +112,43 @@ def _normalize_frame(frame: Any) -> np.ndarray:
     raise ValueError(f"Unexpected render frame shape: {arr.shape}")
 
 
+def _scalar_bool(x: Any) -> bool:
+    if isinstance(x, torch.Tensor):
+        return bool(x.item()) if x.numel() == 1 else bool(torch.any(x).item())
+    if isinstance(x, np.ndarray):
+        return bool(x.item()) if x.size == 1 else bool(np.any(x))
+    return bool(x)
+
+
+def _step_trace(raw_obs: Dict[str, Any], env, action: np.ndarray, info: Dict[str, Any], t: int) -> Dict[str, Any]:
+    extra = raw_obs.get("extra", {})
+    tcp_pose = _as_np(extra.get("tcp_pose", np.zeros((1, 7), dtype=np.float32)))
+    goal_pos = _as_np(extra.get("goal_pos", np.zeros((1, 3), dtype=np.float32)))
+    is_grasped = _as_np(extra.get("is_grasped", np.zeros((1,), dtype=np.float32)))
+
+    tcp_pose = tcp_pose[0] if tcp_pose.ndim > 1 else tcp_pose
+    goal_pos = goal_pos[0] if goal_pos.ndim > 1 else goal_pos
+    is_grasped = is_grasped.reshape(-1)
+
+    cube_p = _as_np(env.unwrapped.cube.pose.p)
+    cube_p = cube_p[0] if cube_p.ndim > 1 else cube_p
+    d_tcp_cube = float(np.linalg.norm(tcp_pose[:3] - cube_p))
+    dz_tcp_cube = float(abs(float(tcp_pose[2]) - float(cube_p[2])))
+
+    return {
+        "step": int(t),
+        "tcp_pose": [float(v) for v in tcp_pose.tolist()],
+        "cube_pos": [float(v) for v in cube_p.tolist()],
+        "goal_pos": [float(v) for v in goal_pos.tolist()],
+        "is_grasped": float(is_grasped[0]) if is_grasped.size > 0 else 0.0,
+        "success": bool(_extract_success(info)),
+        "action": [float(v) for v in action.tolist()],
+        "action_gripper": float(action[-1]),
+        "d_tcp_cube": d_tcp_cube,
+        "dz_tcp_cube": dz_tcp_cube,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description="Closed-loop ManiSkill PickCube-v1 evaluation with trained checkpoint.")
     parser.add_argument(
@@ -130,6 +168,66 @@ def main():
     parser.add_argument("--render_mode", type=str, default="human", choices=["human", "rgb_array"])
     parser.add_argument("--save_video", type=Path, default=None, help="Optional mp4 path when render_mode=rgb_array")
     parser.add_argument("--instruction", type=str, default="Pick up the green cube")
+    parser.add_argument(
+        "--gripper_warmup_steps",
+        type=int,
+        default=0,
+        help="Force gripper action to open value for first N env steps (debug early-close issue).",
+    )
+    parser.add_argument(
+        "--gripper_open_value",
+        type=float,
+        default=1.0,
+        help="Action value for gripper channel during warmup/gating open state (default +1.0).",
+    )
+    parser.add_argument(
+        "--print_step_pose",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Print step-by-step tcp/cube/goal pose and gripper action.",
+    )
+    parser.add_argument(
+        "--step_trace_path",
+        type=Path,
+        default=None,
+        help="Optional JSONL path for per-step traces.",
+    )
+    parser.add_argument(
+        "--gripper_proximity_gate",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Only allow closing gripper when tcp is close to cube and height is aligned.",
+    )
+    parser.add_argument(
+        "--gripper_gate_dist",
+        type=float,
+        default=0.025,
+        help="Distance threshold (meters) for tcp-cube proximity gate.",
+    )
+    parser.add_argument(
+        "--gripper_gate_dz",
+        type=float,
+        default=0.012,
+        help="Absolute z-difference threshold (meters) for proximity gate.",
+    )
+    parser.add_argument(
+        "--arm_action_scale",
+        type=float,
+        default=1.0,
+        help="Scale factor for arm action dims (all except last gripper dim). <1.0 makes motion gentler.",
+    )
+    parser.add_argument(
+        "--action_ema_alpha",
+        type=float,
+        default=0.0,
+        help="EMA smoothing factor in [0,1). 0 disables smoothing; higher means smoother/slower action changes.",
+    )
+    parser.add_argument(
+        "--max_action_delta",
+        type=float,
+        default=0.0,
+        help="Per-step max absolute delta for arm dims. 0 disables clipping.",
+    )
     args = parser.parse_args()
 
     policy = _load_policy(args.ckpt_path, args.device)
@@ -141,6 +239,7 @@ def main():
         args.env_id,
         obs_mode="rgb",
         control_mode="pd_joint_pos",
+        sensor_configs={"base_camera": {"width": 320, "height": 240}},
         render_mode=args.render_mode,
         max_episode_steps=args.max_steps,
     )
@@ -151,13 +250,52 @@ def main():
     frames: List[np.ndarray] = []
     success = False
     step_count = 0
+    step_traces: List[Dict[str, Any]] = []
+    prev_action: np.ndarray | None = None
 
     for t in range(args.max_steps):
         action_seq = runner.get_action(policy)
         action = action_seq[0].astype(np.float32)  # receding horizon: execute first action only
+        # Apply optional motion shaping to reduce aggressive "hit-and-push" behavior.
+        if args.arm_action_scale != 1.0:
+            action[:-1] *= np.float32(args.arm_action_scale)
+        if prev_action is not None and args.max_action_delta > 0:
+            delta = action[:-1] - prev_action[:-1]
+            delta = np.clip(delta, -args.max_action_delta, args.max_action_delta)
+            action[:-1] = prev_action[:-1] + delta
+        if prev_action is not None and args.action_ema_alpha > 0:
+            a = np.float32(args.action_ema_alpha)
+            action[:-1] = a * prev_action[:-1] + (1.0 - a) * action[:-1]
+        eligible_to_close = True
+        if t < args.gripper_warmup_steps:
+            action[-1] = np.float32(args.gripper_open_value)
+        if args.gripper_proximity_gate:
+            extra = raw_obs.get("extra", {})
+            tcp_pose = _as_np(extra.get("tcp_pose", np.zeros((1, 7), dtype=np.float32)))
+            tcp_pose = tcp_pose[0] if tcp_pose.ndim > 1 else tcp_pose
+            cube_p = _as_np(env.unwrapped.cube.pose.p)
+            cube_p = cube_p[0] if cube_p.ndim > 1 else cube_p
+            d_tcp_cube = float(np.linalg.norm(tcp_pose[:3] - cube_p))
+            dz = float(abs(float(tcp_pose[2]) - float(cube_p[2])))
+            # If not close/aligned enough, force gripper open to avoid early sweeping pushes.
+            eligible_to_close = bool(d_tcp_cube <= args.gripper_gate_dist and dz <= args.gripper_gate_dz)
+            if not eligible_to_close:
+                action[-1] = np.float32(args.gripper_open_value)
+        prev_action = action.copy()
         raw_obs, reward, terminated, truncated, info = env.step(action)
         step_count += 1
         runner.update_obs(_build_obs_for_policy(raw_obs, env, language_emb=language_emb))
+        trace = _step_trace(raw_obs=raw_obs, env=env, action=action, info=info, t=t)
+        trace["eligible_to_close"] = bool(eligible_to_close)
+        step_traces.append(trace)
+        if args.print_step_pose:
+            print(
+                "[STEP {step:03d}] success={success} grasp={is_grasped:.0f} "
+                "a7={action_gripper:+.3f} d={d_tcp_cube:.4f} dz={dz_tcp_cube:.4f} "
+                "eligible_to_close={eligible_to_close} tcp={tcp_pose} cube={cube_pos} goal={goal_pos}".format(
+                    **trace
+                )
+            )
 
         if args.render_mode == "human":
             env.render()
@@ -167,7 +305,7 @@ def main():
                 frames.append(_normalize_frame(frame))
 
         success = _extract_success(info)
-        if success or terminated or truncated:
+        if success or _scalar_bool(terminated) or _scalar_bool(truncated):
             break
 
     env.close()
@@ -178,6 +316,12 @@ def main():
         args.save_video.parent.mkdir(parents=True, exist_ok=True)
         imageio.mimsave(str(args.save_video), frames, fps=20)
 
+    if args.step_trace_path is not None:
+        args.step_trace_path.parent.mkdir(parents=True, exist_ok=True)
+        with args.step_trace_path.open("w", encoding="utf-8") as f:
+            for row in step_traces:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
     print("=== Real Sim Eval Finished ===")
     print(f"env: {args.env_id}")
     print(f"checkpoint: {args.ckpt_path}")
@@ -186,6 +330,8 @@ def main():
     print(f"language_conditioning: {use_lang}")
     if args.save_video is not None:
         print(f"video: {args.save_video}")
+    if args.step_trace_path is not None:
+        print(f"step_trace: {args.step_trace_path}")
 
 
 if __name__ == "__main__":

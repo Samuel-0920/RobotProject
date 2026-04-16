@@ -1,0 +1,44 @@
+name: robot_vla_conda
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy>=1.23
+  - scipy>=1.10
+  - scikit-learn>=1.3
+  - pyyaml>=6.0
+  - h5py
+  - zarr
+  - numba
+  - imageio
+  - opencv
+  - pillow
+  - gymnasium
+  - hydra-core
+  - omegaconf
+  - dill
+  - tqdm
+  - requests
+  - ffmpeg
+  - pip:
+      # Vision / VLA stack used in this repo
+      - ultralytics>=8.3.0
+      - open3d>=0.18.0
+      - git+https://github.com/openai/CLIP.git
+      - git+https://github.com/facebookresearch/segment-anything-2.git
+
+      # ManiSkill runtime (repo currently imports mani_skill.*)
+      - mani_skill
+
+      # Diffusion policy stack
+      - einops
+      - diffusers
+      - transformers
+      - accelerate
+
+      # Torch: if CUDA build is needed, install/upgrade manually after env create:
+      # pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+      - torch>=2.1.0
+      - torchvision>=0.16.0

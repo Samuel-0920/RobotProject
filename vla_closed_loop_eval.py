@@ -394,6 +394,8 @@ def _run_phase(
     lang_enabled: bool,
     render_mode: str,
     frames: List[np.ndarray],
+    gripper_warmup_steps: int = 0,
+    gripper_open_value: float = -1.0,
 ) -> Tuple[Dict[str, Any], Dict[str, Any], bool, int, bool, bool]:
     """Returns (raw_obs, info, success, executed, terminated, truncated) from last step."""
     raw_obs, info = start_obs, {}
@@ -404,6 +406,8 @@ def _run_phase(
     for _ in range(steps):
         action_seq = runner.get_action(policy)
         action = action_seq[0].astype(np.float32)
+        if executed < gripper_warmup_steps:
+            action[-1] = np.float32(gripper_open_value)
         raw_obs, reward, terminated, truncated, info = env.step(action)
         terminated, truncated = _scalar_bool(terminated), _scalar_bool(truncated)
         obs = _obs_to_policy(raw_obs, env)
@@ -475,6 +479,18 @@ def main():
         default=True,
         help="Print reflection stages (scene_json summary, VLM/brain outputs, retry) to stdout.",
     )
+    parser.add_argument(
+        "--gripper_warmup_steps",
+        type=int,
+        default=0,
+        help="Force gripper action to open value for first N steps in each phase (debug early-close issue).",
+    )
+    parser.add_argument(
+        "--gripper_open_value",
+        type=float,
+        default=1.0,
+        help="Action value for gripper channel during warmup/gating open state (default +1.0).",
+    )
     args = parser.parse_args()
 
     root = _repo_root()
@@ -527,6 +543,7 @@ def main():
         args.env_id,
         obs_mode="rgbd",
         control_mode="pd_joint_pos",
+        sensor_configs={"base_camera": {"width": 320, "height": 240}},
         render_mode=args.render_mode,
         max_episode_steps=args.phase_steps,
     )
@@ -548,6 +565,8 @@ def main():
         lang_enabled=lang_enabled,
         render_mode=args.render_mode,
         frames=frames,
+        gripper_warmup_steps=args.gripper_warmup_steps,
+        gripper_open_value=args.gripper_open_value,
     )
     total_steps += used_steps
 
@@ -712,6 +731,8 @@ def main():
             lang_enabled=lang_enabled,
             render_mode=args.render_mode,
             frames=frames,
+            gripper_warmup_steps=args.gripper_warmup_steps,
+            gripper_open_value=args.gripper_open_value,
         )
         total_steps += used_steps2
         reflection_record["phase_d_steps"] = used_steps2

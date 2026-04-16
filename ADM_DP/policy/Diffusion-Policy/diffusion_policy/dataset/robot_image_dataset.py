@@ -190,7 +190,8 @@ class RobotImageDataset(BaseImageDataset):
         :return: 标准化后的数据字典
         """
         agent_pos = sample['state'].astype(np.float32)  # 处理状态信息
-        head_cam = np.moveaxis(sample['head_camera'], -1, 1) / 255  # 归一化头部摄像头图像
+        # zarr stores head_camera as (T, C, H, W); do not moveaxis here.
+        head_cam = sample['head_camera'].astype(np.float32) / 255.0
         # 处理其他相机图像（如果需要）
         # front_cam = np.moveaxis(sample['front_camera'], -1, 1) / 255
         # left_cam = np.moveaxis(sample['left_camera'], -1, 1) / 255
@@ -207,6 +208,8 @@ class RobotImageDataset(BaseImageDataset):
             },
             'action': sample['action'].astype(np.float32)  # T, D
         }
+        for key in self.language_keys:
+            data['obs'][key] = sample[key].astype(np.float32)
         return data
 
     def __getitem__(self, idx) -> Dict[str, torch.Tensor]:

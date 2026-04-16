@@ -64,10 +64,21 @@ def main():
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--n_obs_steps", type=int, default=3)
     parser.add_argument("--instruction", type=str, default="Pick up the green cube")
+    parser.add_argument(
+        "--scan_shifts",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="If enabled, print mean L2 for GT alignment shifts in [-3, 3].",
+    )
     args = parser.parse_args()
 
-    keys = ["head_camera", "state", "action", "language_emb"]
-    rb = ReplayBuffer.copy_from_path(str(args.zarr_path), keys=keys)
+    keys = ["head_camera", "state", "action"]
+    try:
+        rb = ReplayBuffer.copy_from_path(str(args.zarr_path), keys=keys + ["language_emb"])
+        has_lang_in_zarr = "language_emb" in rb.keys()
+    except Exception:
+        rb = ReplayBuffer.copy_from_path(str(args.zarr_path), keys=keys)
+        has_lang_in_zarr = False
     n = rb["action"].shape[0]
     if n < args.n_obs_steps:
         raise RuntimeError(f"Not enough frames in zarr ({n}) for n_obs_steps={args.n_obs_steps}")
@@ -84,24 +95,47 @@ def main():
             "agent_pos": rb["state"][i].astype(np.float32),
         }
         if use_lang:
-            if "language_emb" in rb.keys():
+            if has_lang_in_zarr:
                 obs["language_emb"] = rb["language_emb"][i].astype(np.float32)
             else:
                 obs["language_emb"] = language_emb
         runner.update_obs(obs)
 
     pred = runner.get_action(policy)
-    gt = rb["action"][args.n_obs_steps : args.n_obs_steps + pred.shape[0]]
+    # DP policy returns actions starting from (n_obs_steps - 1) due to receding-horizon
+    # slice in DiffusionUnetImagePolicy.predict_action(): start = To - 1.
+    gt_start = args.n_obs_steps - 1
+    gt = rb["action"][gt_start : gt_start + pred.shape[0]]
 
     print("=== Smoke Eval OK ===")
     print(f"checkpoint: {args.ckpt_path}")
     print(f"dataset: {args.zarr_path}")
     print(f"pred action shape: {pred.shape}")
     print(f"gt action shape:   {gt.shape}")
+    print(f"gt_start_index: {gt_start}")
     print(f"language_conditioning: {use_lang}")
+    print(f"language_emb_in_zarr: {has_lang_in_zarr}")
     if gt.shape == pred.shape:
         l2 = np.linalg.norm(pred - gt, axis=1).mean()
         print(f"mean L2(pred,gt): {l2:.6f}")
+    if args.scan_shifts:
+        n_total = rb["action"].shape[0]
+        print("shift_scan_l2:")
+        best_shift = None
+        best_l2 = float("inf")
+        for shift in range(-3, 4):
+            s = gt_start + shift
+            e = s + pred.shape[0]
+            if s < 0 or e > n_total:
+                continue
+            gt_shift = rb["action"][s:e]
+            l2_shift = float(np.linalg.norm(pred - gt_shift, axis=1).mean())
+            print(f"  shift={shift:+d} l2={l2_shift:.6f}")
+            if l2_shift < best_l2:
+                best_l2 = l2_shift
+                best_shift = shift
+        if best_shift is not None:
+            print(f"best_shift: {best_shift:+d} (l2={best_l2:.6f})")
     print(f"pred sample[0]: {np.array2string(pred[0], precision=4)}")
 
 

@@ -1,5 +1,11 @@
 name: task_config
 
+# NOTE:
+# This is a legacy/default template with multimodal placeholders (tcp/pointcloud/tactile).
+# For current PickCube language-conditioned training/eval, use:
+#   task=pickcube_lang_minimal
+# which expects agent_pos shape [31] and language_emb shape [512].
+
 image_shape: &image_shape [3, 240, 320]
 # image_shape: &image_shape [3, 256, 256]
 shape_meta: &shape_meta
