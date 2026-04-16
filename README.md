@@ -40,6 +40,42 @@ Details and copy-paste commands: **[使用手册.md §6](./使用手册.md)**. S
 4. **Checkpoints**: Periodic saves go to **`ADM_DP/policy/Diffusion-Policy/checkpoints/<run_name>/`**, not under Hydra’s `data/outputs/...` (training logs/configs live there).
 5. **Eval**: `eval_ckpt_smoke.py` → `eval_real_sim.py` → `vla_closed_loop_eval.py` (start **vLLM** before VLA eval; `--vlm_model` must match the server’s `--served-model-name`).
 
+## Dataset sources (used in this project)
+
+Current training/eval pipeline is built on **ManiSkill demonstrations/assets**.
+
+### Primary dataset in use now
+
+- **Task**: `PickCube-v1`
+- **Demo file used**: `~/.maniskill/demos/PickCube-v1/teleop/trajectory.rgb.pd_joint_pos.physx_cpu.h5`
+- **Converted training set**: `ADM_DP/data/zarr_data/PickCube_v1_lang_bridge.zarr`
+
+Download command:
+
+```bash
+python -m mani_skill2.utils.download_demo PickCube-v1
+```
+
+### YCB extension dataset (for next-stage experiments)
+
+- **Assets**: YCB object models (used by `PickSingleYCB`)
+- **Demo task**: `PickSingleYCB-v0`
+
+Download commands (recommended download target: `dataset/` under repo):
+
+```bash
+# in repo root
+mkdir -p dataset
+MANISKILL2_ASSET_DIR=$PWD/dataset python -m mani_skill2.utils.download_asset ycb
+MANISKILL2_DATA_DIR=$PWD/dataset python -m mani_skill2.utils.download_demo PickSingleYCB-v0
+```
+
+### Official references
+
+- ManiSkill repo: [https://github.com/haosulab/ManiSkill](https://github.com/haosulab/ManiSkill)
+- ManiSkill docs: [https://maniskill.readthedocs.io](https://maniskill.readthedocs.io)
+- YCB dataset project page: [https://www.ycbbenchmarks.com](https://www.ycbbenchmarks.com)
+
 ## `vla_closed_loop_eval.py` scene modes
 
 - **`perception`** (default): YOLO+SAM2 → `scene_json` for reflection.
